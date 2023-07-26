@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마리끌레르</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/main1576.css">
+
+    <link rel="stylesheet" href="css/main1024.css">
+
+    <link rel="stylesheet" href="css/main768.css">
+
+
+
+
+    <style>
+
+      #slide span {
+        position: absolute; top:50%; 
+        display: block; font-size: 38px; 
+        color:#fff; line-height: 40px; 
+        background: rgba(0,0,0,0.6); 
+        cursor: pointer; height: 50px; 
+        transform: translateY(-50%); 
+      }
+      #slide span:hover {
+        background: rgba(255,255,255,0.8);
+        color:#000;
+      }
+
+      .prev {
+         left:0; border-radius: 0 10px 10px 0px; 
+         padding: 0 8px 0 2px;
+        }
+      .next {
+         right:0; border-radius: 10px 0px 0px 10px; 
+         padding: 0 2px 0 8px;
+        }
+
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
+    
+    <script>
+
+        
+        $(function(){
+            // 포스트박스 변경 제이쿼리
+            $('.tap li:nth-of-type(1)').click(function () {
+                $('.post_box').show().css('display','flex');
+                $('.post_box2').hide();
+            });
+
+            $('.tap li:nth-of-type(2)').click(function () {
+                $('.post_box2').show().css('display','flex');
+                $('.post_box').hide();
+            });
+
+
+            //#name 스크롤하면 글자 이동
+
+            $(window).scroll(function(){
+                let ws=$(this).scrollTop();
+                console.log(ws);
+                if(ws<800){
+                    $('#name span:nth-of-type(2)').animate({'margin-top':-ws/7},20);
+                    $('#name span:nth-of-type(3)').animate({'margin-top':ws/10},20);
+                    $('#name span:nth-of-type(4)').animate({'margin-top':-ws/3},20);
+                    $('#name span:nth-of-type(5)').animate({'margin-top':ws/3},20);
+                    $('#name span:nth-of-type(6)').animate({'margin-top':-ws/4},20);
+                }  
+
+                //#catalog>.menu li 스크롤하면 이동
+                let con1=$('#content1').offset().top; //1800
+                let con2=$('#content2').offset().top; //2770
+                let con3=$('#content3').offset().top; //3740
+                let con4=$('#content4').offset().top; //4710
+
+                console.log(con1);
+
+                if(ws>con1-500){
+                    // $('.menu li').css('color','white'); 
+                    // $('.menu li:nth-of-type(1)').css('color','#7b7cbb'); 
+                    $('.menu li').removeClass('active');
+                    $('.menu li:nth-of-type(1)').addClass('active'); 
+                    $('.menu li img').css("display", "none"); 
+                    $('.menu li:nth-of-type(1) img').css("display", "block");
+                                       
+                }
+                if (ws>con2-300){
+                    // $('.menu li').css('color','white');
+                    // $('.menu li:nth-of-type(2)').css('color','#7b7cbb'); 
+                    $('.menu li').removeClass('active');
+                    $('.menu li:nth-of-type(2)').addClass('active'); 
+                    $('.menu li img').css("display", "none"); 
+                    $('.menu li:nth-of-type(2) img').css("display", "block");               
+                }
+                if (ws>con3-300){
+                    // $('.menu li').css('color','white');
+                    // $('.menu li:nth-of-type(3)').css('color','#7b7cbb');
+                    $('.menu li').removeClass('active');
+                    $('.menu li:nth-of-type(3)').addClass('active');
+                    $('.menu li img').css("display", "none"); 
+                    $('.menu li:nth-of-type(3) img').css("display", "block");                  
+                }
+                if (ws>con4-200){    
+                    // $('.menu li').css('color','white');                
+                    // $('.menu li:nth-of-type(4)').css('color','#7b7cbb');
+                    $('.menu li').removeClass('active');
+                    $('.menu li:nth-of-type(4)').addClass('active'); 
+                    $('.menu li img').css("display", "none"); 
+                    $('.menu li:nth-of-type(4) img').css("display", "block");
+                }
+
+            });
+
+            //버튼으로 제어하는 슬라이드
+
+            $('.prev').click(function(){
+                $('#slide_box .slider:last').prependTo('#slide_box');
+                $('#slide_box').css('margin-left','-50%');
+                $('#slide_box').stop().animate({marginLeft:'-10%'},800);
+            });
+
+            $('.next').click(function(){
+                $('#slide_box').stop().animate({marginLeft:'-50%'},800, function(){
+                $('#slide_box .slider:first').appendTo('#slide_box');
+                $('#slide_box').css({marginLeft:'-10%'});
+                });
+            });
+        
+
+        });
+        
+
+        let img_array = [["img/fashion1.jpg","img/fashion2.jpg",
+        "img/fashion3.jpg"], 
+        ["img/beauty1.jpg","img/beauty2.jpg",
+        "img/beauty3.jpg"],
+        ["img/cover1.jpg","img/cover2.jpg",
+        "img/cover3.jpg"],
+        ["img/wedding1.jpg","img/wedding2.jpg",
+        "img/wedding3.jpg"]];
+
+        let index = 0;
+
+        function slide(){
+            for(let i in img_array){
+                document['cover'+i].src = img_array[i][index];
+            }
+    
+            index++;
+            if(index>=img_array[0].length){
+                index=0;
+            }
+                        
+        }
+
+        setInterval(slide,1700);
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div id="nav_wrap">
+            <div class="logo"><img src="img/logo_.png" alt=""></div>
+
+
+            <div id="bar">
+                <ul class="right">
+                    <li>Login</li>
+                    <li>Join</li>
+                    <li>About us</li>
+                </ul>
+            </div>
+        </div>
+        <div id="nav">
+            <ul class="nav_bottom">
+                <li><a href="#">FASHION</a></li>
+                <li><a href="#">BEAUTY</a></li>
+                <li><a href="#">CELEB</a></li>     
+                <li><a href="#">RUNWAY</a></li>
+                <li><a href="#">WEDDING</a></li>
+        
+            </ul>
+        </div>
+
+
+        <div id="name">
+            <h1>
+                <span>m</span>
+                <span>a</span>
+                <span>r</span>
+                <span>i</span>
+                <span>e</span>
+            </h1>
+
+            <h1>
+                <span>c</span>
+                <span>l</span>
+                <span>a</span>
+                <span>i</span>
+                <span>r</span>
+                <span>e</span>
+            </h1>
+        </div>
+
+
+        
+    </header>
+
+    
+
+    <div id="main">
+        <video src="media/videoplayback.mp4" autoplay muted loop></video>
+    </div>
+
+    <div id="slider">
+
+        <div id="tap">
+            <div id="catalog">
+                <ul class="menu">
+                    <li class="on">
+                        <div class="arrow"><img src="img/arrow.png" alt="">FASHION</div>
+                        </li>
+                    <li class="on">
+                        <div class="arrow"><img src="img/arrow.png" alt="">BEAUTY</div>
+                        </li>
+                    <li class="on">
+                        <div class="arrow"><img src="img/arrow.png" alt="">CELEB</div>
+                        </li>
+                    <li class="on">
+                        <div class="arrow"><img src="img/arrow.png" alt="">WEDDING</div>
+                       </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="content1">
+
+                <div class="text">
+                    <h1>IN THE AIR </h1><br>
+                    <p><i>마리끌레르 패션 화보</i> <br> <br>
+                        부서지는 햇살 가득 뜨거운 열기를 <br>
+                        잔뜩 머금은, <br>
+                        우리만의 비밀스러운 파티.</p>
+                </div>
+
+                <div class="cover">
+                    <img src="img/fashion1.jpg" name="cover0">
+                </div>
+
+            </div>
+
+            <div id="content2">
+
+                <div class="text">
+                    <h1>BE BOLD</h1><br>
+                    <p> <i><b>DARK OMBRE <br>
+                        GENTLE BROWN <br>
+                        GLOSSY RED <br>
+                        BLACK GRUNGE</b></i> <br>
+                        <br>
+                        이현이의 5가지 뷰티 룩 <br>
+                        새롭고 흥미로운 도전을 즐기는 <br>
+                        모델 겸 엔터테이너 이현이. <br>
+                        <br>
+                        올여름, <br>
+                        그 대담하고 매혹적인 찰나. 
+                    </p>
+                </div>
+
+                <div class="cover">
+                    <img src="img/beauty1.jpg" name="cover1">
+                </div>
+
+            </div>
+
+            <div id="content3">
+
+                <div class="text">
+                    <h1>Marie claire Aug</h1><br>
+                    <p> [마리끌레르] 8월호 커버 주인공은 <br>
+                        밀라노에서 만난 배우 김태리입니다.<br> <br>
+                        헤아릴 수 없는 오묘한 눈빛으로 <br>
+                        독특한 존재감을 드러낸 김태리와 <br>
+                        프라다의 눈부신 조우.                    
+                    </p>
+                </div>
+
+                <div class="cover">
+                    <img src="img/cover1.jpg" name="cover2">
+                </div>
+
+            </div>
+
+            <div id="content4">
+
+                <div class="text">
+                    <h1>UNDER THE VEIL</h1><br>
+                    <p> <i>8월의 신부</i> <br> <br>
+                        우아한 베일에 감춰질 듯 드러나는 <br>
+                        몽환적인 웨딩 뷰티 신.                    
+                    </p>
+                </div>
+
+                <div class="cover">
+                    <img src="img/wedding1.jpg" name="cover3">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="banner">
+        <img src="img/banner1.jpg" alt="">
+
+        <div id="since">
+            <h1>MARIE CLAIRE KOREA</h1> <br>
+            <h3>SINCE Mar 1993</h3> <br>
+            <p>마리끌레르는 1993년 프랑스에서 설립되 가장 영향력 있는 인터내셔널 콘텐츠 그룹입니다. <br>
+            [마리끌레르] 인터내셔널에서는 자매지를 포함해 54개 해외 에디션이 발행되고 있으며, <br>
+            매월 36개국에서 5천3백만 부가 팔리고 있습니다. </p>
+        </div>
+
+        <div id="box">
+            <div class="layer">
+                <div class="round">
+                    <div class="name">Fashion</div>
+                    <br>
+                    <p>마리끌레르 패션은 트렌드세터의 패션<br> 
+                    교과서입니다. 모든 여성이 가지고 있는 패션의<br>  
+                    환상을 누구나 생활속에서 실현할 수 있도록<br>
+                    시즌별 명확한 런웨이 트렌드를 현실적으로 <br>
+                    해석하고 포착해 독자 친화적인 고급그러운 <br>
+                    비쥬얼로 가이드합니다.</p>
+                </div>
+            </div>
+
+            <div class="layer">
+                <div class="round">
+                    <div class="name">Beauty</div>
+                    <br>
+                    <p>마리끌레르 뷰티는 독자에게 권위를 인정받는 <br>
+                    뷰티 지휘관입니다. 뷰티를 관한 여성의 니즈를 <br>
+                    정확하게 포착해 아름다운 비주얼과 함께 <br>
+                    스마트하고 영향력있는 기사를 제공합니다. <br>
+                    전 세계 유일한 인터내셔널 뷰티 어워즈<br>
+                    프리데셀랑스 드 라 보테 (Prix d'Excellence<br> 
+                    de la Beaute)와 스마트 뷰티 페어(SBF)로 <br>
+                    국내에서 가장 영향력 있는  뷰티 어워드를 <br>
+                    주최하고 있습니다. </p>
+                </div>
+            </div>
+
+
+            <div class="layer">
+                <div class="round">
+                    <div class="name">Digital</div>
+                    <br>
+                    <p>마리끌레르 웹사이트는 패션과 뷰티, 컬처의 <br>
+                    트렌드를 빠르게 전하는 디지털 채널입니다. <br> 
+                    완성도 높은 지면의 패션, 뷰티, 컬처 기사 <br>
+                    뿐만아니라 스타 패션, 뷰티, 여행을 즐길 수 <br>
+                    있는 이야기들을 디지털에서 구현 가능한 <br>
+                    다양한 형태의 콘텐츠로 업데이트하고 있습니다. <br>
+                    페이스북,인스타그램, 유튜브, 블로그 등 다양한 <br>
+                    SNS 채널은 마리끌레르 디지털 콘텐츠와 <br>
+                    독자들을 연결해주는 다리이자 소통의 <br>
+                    창구 역할을 담당합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="title">
+            <p>마리끌레르는 스타일 정보만 다루는 단순한 패션 매거진이 아닌 <br>
+            <b>패션 그 이상의 가치를 추구합니다.</b></p>
+        </div>
+
+    </div>
+
+    <div id="slide">
+
+       <div id="slide_box">
+            <div class="slider">
+                <img src="img/slide1.jpg" alt="">
+            </div>
+    
+            <div class="slider">
+                <video src="media/videoplayback_slide.mp4"  autoplay controls></video>
+            </div>
+            
+
+            <div class="slider">
+                <img src="img/slide2.jpg" alt="">
+            </div>
+    
+            <div class="slider">
+                <video src="media/videoplayback_slide1.mp4"  autoplay controls></video>
+            </div>
+    
+            <div class="slider">
+                <img src="img/slide3.jpg" alt="">
+            </div>
+
+       </div>
+
+       <span class="prev">&lt;</span>
+       <span class="next">&gt;</span>
+
+    </div>
+
+    <div id="list">
+
+
+        <div class="title">
+            <h1>POSTS FOR YOU</h1>
+    
+            <ul class="tap">
+                <li>NEW POSTS</li>
+                <li>MUST-READ</li>
+            </ul>
+        </div>
+
+        <div class="post_box">
+            <div id="post1">
+    
+                <img src="img/list1.jpg" alt="">
+                <div class="text">
+                    <h3>황금막내 정국의 성공적인 ‘세븐’</h3> <br>
+                    <p>
+                        정국은 지난 14일 솔로 싱글 '세븐'을 <br> 
+                        발표했습니다. 월요일부터 일요일까지, <br> 
+                        매일 매순간 너를 사랑한다고. <br>
+                        정국이 부르는 위트있는 사랑노래 <br>
+                        'SEVEN'이 글로벌 흥행 기록을 모두<br> 
+                        갈아치우며 신드롬을 일으키고 있습니다.</p>
+                </div>
+                
+            </div>
+    
+            <div id="post2">
+    
+                <img src="img/list2.jpg" alt="">
+                <div class="text">
+                    <h3>THE ORDINARY SUMMER</h3> <br>
+                    <p>여름 뷰티 화보 <br>
+                    가장 보통의 여름날, 보편적이지 않은 뷰티 신.</p>
+                </div>
+                
+            </div>
+    
+            <div id="post3">
+    
+                <img src="img/list3.jpg" alt="">
+                <div class="text">
+                    <h3>샤넬 컬러를 입은 셀럽들</h3> <br>
+                    <p>샤넬 코드 컬러 팝업을 방문한 셀럽들 <br>
+                    샤넬 앰버서더인 뉴진스 민지 등 여러 셀럽들이 <br> 
+                    방문한 ‘샤넬 코드 컬러 팝업’.</p>
+                </div>
+                
+            </div>
+    
+            <div id="post4">
+    
+                <img src="img/list4.jpg" alt="">
+                <div class="text">
+                    <h3>마리끌레르 8월호 도경수 화보 선공개</h3> <br>
+                    <p>영화 [더 문]으로 돌아온 도경수 배우가 <br>
+                    마리끌레르와 다시 만났습니다. <br>
+                    도경수 배우의 근 4년 만의 단독 화보! <br>
+                    찍으면 역대급인, 섹시와 잘생김을 동시에 해내는 <br>
+                    배우 도경수.</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="post_box2">
+            <div id="post5">
+    
+                <img src="img/list5.jpg" alt="">
+                <div class="text">
+                    <h3>영화 [바비] 콜라보레이션 컬렉션</h3> <br>
+                    <p> 영화 '바비'에서 영감을 받은 <br> 
+                        다양한 콜라보레이션 컬렉션. <br>
+                        세계적으로 큰 인기를 끌고 있는 영화 <br> 
+                        [바비]와 협업한 브랜드를 소개합니다.</p>
+                </div>
+                
+            </div>
+    
+            <div id="post6">
+    
+                <img src="img/list6.jpg" alt="">
+                <div class="text">
+                    <h3>올 여름 레인부츠는 이거다</h3> <br>
+                    <p>올 여름 추천 레인 부츠 <br>
+                        유독 긴 장마가 예견된 올 해, <br>
+                        꼭 필요한 예쁘고 실용적인 레인 부츠 </p>
+                </div>
+                
+            </div>
+    
+            <div id="post7">
+    
+                <img src="img/list7.jpg" alt="">
+                <div class="text">
+                    <h3>HOT SUMMER NAIL</h3> <br>
+                    <p>셀렙들의 여름 네일 <br>
+                    셀럽의 SNS에서 찾은 핫 써머 네일 아이디어.</p>
+                </div>
+                
+            </div>
+    
+            <div id="post8">
+    
+                <img src="img/list8.jpg" alt="">
+                <div class="text">
+                    <h3>Rays of Happiness</h3> <br>
+                    <p> 더마티르와 정해인이 함께한 순간. <br>
+                        짙은 구름이 걷히며 고개를 내미는 <br>
+                        햇살처럼 청량하게 빛나는 <br>
+                        배우 정해인과 함께한 순간.</p>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+
+        <div id="notice">
+            
+            <div class="text_box">
+                <img src="img/logo.png" alt=""> 
+                <p>개인정보 취급 방침 | 이용약관 | 회사소개 | 광고제휴 | 정기구독 <br>
+                    (주)엠씨케이퍼블리싱 서울특별시 강남구 봉은사로 226 Tel 02.3458.7300 
+                    Fax 02.3458.7119 정기구독문의 Tel 02.3458.7122 사업자등록번호211-86-54814 <br>
+                    통신판매업신고제 2007-3210121-30-2-10512호 대표 손기연 <br>
+                    Copyright © 2017 MCK Publishing Co. Ltd. All Rights Reserved.</p>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.facebook.com/marieclairekorea" target="_blank"><img src="img/icon1.png" alt=""></a>
+                <a href="https://twitter.com/marieclairekorea" target="_blank"><img src="img/icon2.png" alt=""></a>
+                <a href="https://www.instagram.com/marieclairekorea" target="_blank"><img src="img/icon3.png" alt=""></a>
+                <a href="https://www.youtube.com/user/marieclairekr" target="_blank"><img src="img/icon4.png" alt=""></a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
