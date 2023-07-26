@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="css/main768.css">
 
+    <link rel="stylesheet" href="css/main767.css">
+
 
 
 
@@ -123,23 +125,40 @@
             });
 
             //버튼으로 제어하는 슬라이드
-
-            $('.prev').click(function(){
-                $('#slide_box .slider:last').prependTo('#slide_box');
-                $('#slide_box').css('margin-left','-50%');
-                $('#slide_box').stop().animate({marginLeft:'-10%'},800);
-            });
-
-            $('.next').click(function(){
-                $('#slide_box').stop().animate({marginLeft:'-50%'},800, function(){
-                $('#slide_box .slider:first').appendTo('#slide_box');
-                $('#slide_box').css({marginLeft:'-10%'});
+            if (window.matchMedia("(min-width:1024px)").matches) {
+                $('.prev').click(function () {
+                    $('#slide_box .slider:last').prependTo('#slide_box');
+                    $('#slide_box').css('margin-left', '-50%');
+                    $('#slide_box').stop().animate({ marginLeft: '-10%' }, 800);
                 });
-            });
-        
 
+                $('.next').click(function () {
+                    $('#slide_box').stop().animate({ marginLeft: '-50%' }, 800, function () {
+                        $('#slide_box .slider:first').appendTo('#slide_box');
+                        $('#slide_box').css({ marginLeft: '-10%' });
+                    });
+                });
+
+
+            } else {
+                $('.prev').click(function () {
+                    $('#slide_box .slider:last').prependTo('#slide_box');
+                    $('#slide_box').css('margin-left', '-100%');
+                    $('#slide_box').stop().animate({ marginLeft: '0' }, 800);
+                });
+
+                $('.next').click(function () {
+                    $('#slide_box').stop().animate({ marginLeft: '-100%' }, 800, function () {
+                        $('#slide_box .slider:first').appendTo('#slide_box');
+                        $('#slide_box').css({ marginLeft: '0' });
+                    });
+                });
+
+
+            }
+
+     
         });
-        
 
         let img_array = [["img/fashion1.jpg","img/fashion2.jpg",
         "img/fashion3.jpg"], 
@@ -399,7 +418,7 @@
 
        <div id="slide_box">
             <div class="slider">
-                <img src="img/slide1.jpg" alt="">
+                <img src="img/slide_1.jpg" alt="">
             </div>
     
             <div class="slider">
@@ -408,7 +427,7 @@
             
 
             <div class="slider">
-                <img src="img/slide2.jpg" alt="">
+                <img src="img/slide_2.jpg" alt="">
             </div>
     
             <div class="slider">
@@ -416,7 +435,7 @@
             </div>
     
             <div class="slider">
-                <img src="img/slide3.jpg" alt="">
+                <img src="img/slide_3.jpg" alt="">
             </div>
 
        </div>

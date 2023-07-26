@@ -1,7 +1,7 @@
 @charset "uft-8";
 
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1024px) and (max-width:1575px) {
     header {
         width: 100%;
         height: 680px;
@@ -87,7 +87,7 @@
     }
     
     #name h1 {
-        font-size: 270px;
+        font-size: 200px;
         font-family: 'Fira Sans Extra Condensed', sans-serif;
         letter-spacing: 50px;
         display: flex;
@@ -160,7 +160,7 @@
         color: #fff;
         text-align: center;
         transition: all 0.5s ease-in-out;
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .arrow {
@@ -181,7 +181,7 @@
     
     #slider>#content {
         width: 80%;
-        height: 3800px;
+        height: 3670px;
         /* background-color: blueviolet; */
     }
 
@@ -202,7 +202,7 @@
     }
     
     #slider>#content>#content1 {
-        height: 920px;
+        /* height: 920px; */
         /* background-color: pink;  */
         display: flex;
         justify-content: space-around;
@@ -215,7 +215,7 @@
     }
     
     .cover img {
-        height: 920px;
+        /* height: 920px; */
         border: 1px solid #ffffff;
     }
     
@@ -280,7 +280,7 @@
     
     #banner img {
         width: 100%;
-        background-image: url(../img/banner.jpg);
+        background-image: url(../img/banner2.jpg);
     }
     
     
@@ -290,14 +290,14 @@
         position: absolute;
         text-align: right;
         font-size: 18px;
-        top: 5%;
-        left: 32%;
+        top: 6%;
+        left: 34%;
         font-family: 'Roboto Slab', serif;
     }
     
     #banner>#since p {
         font-family: 'SUITE-Regular';
-        font-size: 22px;
+        font-size: 18px;
     }
     
     .name {
@@ -327,7 +327,7 @@
     }
 
     #box>.layer p {
-        font-size: 16px;
+        font-size: 13.5px;
         padding: 10px;
         font-family: 'SUITE-Regular';
         background-color: #a7a7a796;
@@ -344,10 +344,10 @@
     .round>.name {
         border: 3px solid #fff;
         border-radius: 100%;
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         margin: 0 auto;
-        padding: 40px 0px;
+        padding: 35px 0px;
         font-size: 25px;
     }
     
@@ -388,8 +388,8 @@
         position: absolute;
         text-align: right;
         top: 88%;
-        right: 6%;
-        font-size: 22px;
+        right: 5.5%;
+        font-size: 18px;
         font-family: 'SUITE-Regular';
     }
     
@@ -423,7 +423,7 @@
     
     .slider img {
        width: 100%;
-       height: 278px;
+       height: 226px;
     }
     
     .slider video{
@@ -491,7 +491,7 @@
     }
     
     .post_box h3 {
-        font-size: 17px;
+        font-size: 24px;
         font-family: 'SUITE-Regular';
     }
     
@@ -508,7 +508,7 @@
     }
     
     .post_box2 h3 {
-        font-size: 17px;
+        font-size: 24px;
         font-family: 'SUITE-Regular';
     }
     
