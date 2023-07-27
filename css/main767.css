@@ -34,6 +34,10 @@
         width: 70px;
         height: 75px;
     }
+
+    #i {
+        display: block;
+    } 
     
     .right {
         position: relative;
@@ -80,23 +84,18 @@
         text-align: center;
         margin: 0 auto;
         font-size: 20px;
-
     }
-    .nav_bottom li {
+    .nav_bottom ul li a {
         display: block;
     }    
     
-     .nav_bottom li a {
+    .nav_bottom ul li a:hover {
+        background-color: #7c7c7c;
+    }
+
+    .nav_bottom li a {
         color: #fff;
         font-family: 'Roboto Slab', serif;
-    }
-
-    header .nav_bottom li a:hover {
-        background-color: #c4c4c4d3;
-    }
-
-    .nav_list {
-        display: none;
     }
     
     #name {
