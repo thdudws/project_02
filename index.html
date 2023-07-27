@@ -56,12 +56,16 @@
         
         $(function(){
             // 포스트박스 변경 제이쿼리
-            $('.tap li:nth-of-type(1)').click(function () {
+            $('.tap li:nth-of-type(1)').click(function () {                
+                $('.tap li').removeClass('click');
+                $(this).addClass('click');
                 $('.post_box').show().css('display','flex');
                 $('.post_box2').hide();
             });
 
             $('.tap li:nth-of-type(2)').click(function () {
+                $('.tap li').removeClass('click');
+                $(this).addClass('click');
                 $('.post_box2').show().css('display','flex');
                 $('.post_box').hide();
             });
@@ -125,37 +129,42 @@
             });
 
             //버튼으로 제어하는 슬라이드
-            if (window.matchMedia("(min-width:1024px)").matches) {
-                $('.prev').click(function () {
-                    $('#slide_box .slider:last').prependTo('#slide_box');
-                    $('#slide_box').css('margin-left', '-50%');
-                    $('#slide_box').stop().animate({ marginLeft: '-10%' }, 800);
-                });
-
-                $('.next').click(function () {
-                    $('#slide_box').stop().animate({ marginLeft: '-50%' }, 800, function () {
-                        $('#slide_box .slider:first').appendTo('#slide_box');
-                        $('#slide_box').css({ marginLeft: '-10%' });
+            function slide() {
+                if (window.matchMedia("(min-width:1024px)").matches) {
+                    $('.prev').click(function () {
+                        $('#slide_box .slider:last').prependTo('#slide_box');
+                        $('#slide_box').css('margin-left', '-50%');
+                        $('#slide_box').stop().animate({ marginLeft: '-10%' }, 800);
                     });
-                });
 
-
-            } else {
-                $('.prev').click(function () {
-                    $('#slide_box .slider:last').prependTo('#slide_box');
-                    $('#slide_box').css('margin-left', '-100%');
-                    $('#slide_box').stop().animate({ marginLeft: '0' }, 800);
-                });
-
-                $('.next').click(function () {
-                    $('#slide_box').stop().animate({ marginLeft: '-100%' }, 800, function () {
-                        $('#slide_box .slider:first').appendTo('#slide_box');
-                        $('#slide_box').css({ marginLeft: '0' });
+                    $('.next').click(function () {
+                        $('#slide_box').stop().animate({ marginLeft: '-50%' }, 800, function () {
+                            $('#slide_box .slider:first').appendTo('#slide_box');
+                            $('#slide_box').css({ marginLeft: '-10%' });
+                        });
                     });
-                });
 
 
+                } else {
+                    $('.prev').click(function () {
+                        $('#slide_box .slider:last').prependTo('#slide_box');
+                        $('#slide_box').css('margin-left', '-100%');
+                        $('#slide_box').stop().animate({ marginLeft: '0' }, 800);
+                    });
+
+                    $('.next').click(function () {
+                        $('#slide_box').stop().animate({ marginLeft: '-100%' }, 800, function () {
+                            $('#slide_box .slider:first').appendTo('#slide_box');
+                            $('#slide_box').css({ marginLeft: '0' });
+                        });
+                    });
+                }
             }
+
+            slide();
+
+            window.addEventListener('resize', slide)
+            
 
      
         });
@@ -207,16 +216,26 @@
                 </ul>
             </div>
         </div>
+
         <div id="nav">
+            <img src="img/i.png" id="i">
             <ul class="nav_bottom">
                 <li><a href="#">FASHION</a></li>
                 <li><a href="#">BEAUTY</a></li>
                 <li><a href="#">CELEB</a></li>     
                 <li><a href="#">RUNWAY</a></li>
-                <li><a href="#">WEDDING</a></li>
-        
+                <li><a href="#">WEDDING</a></li>        
             </ul>
+            
         </div>
+
+        <ul class="nav_list">
+            <li><a href="#">FASHION</a></li>
+            <li><a href="#">BEAUTY</a></li>
+            <li><a href="#">CELEB</a></li>     
+            <li><a href="#">RUNWAY</a></li>
+            <li><a href="#">WEDDING</a></li>        
+        </ul>
 
 
         <div id="name">
@@ -348,7 +367,7 @@
     </div>
 
     <div id="banner">
-        <img src="img/banner1.jpg" alt="">
+        <img src="img/banner2.jpg" alt="">
 
         <div id="since">
             <h1>MARIE CLAIRE KOREA</h1> <br>
@@ -409,7 +428,9 @@
 
         <div id="title">
             <p>마리끌레르는 스타일 정보만 다루는 단순한 패션 매거진이 아닌 <br>
-            <b>패션 그 이상의 가치를 추구합니다.</b></p>
+            패션 그 이상의 가치를 추구합니다. <br>
+            <b>Think smart, Look amazing</b>
+            </p>
         </div>
 
     </div>
@@ -452,7 +473,7 @@
             <h1>POSTS FOR YOU</h1>
     
             <ul class="tap">
-                <li>NEW POSTS</li>
+                <li class="click">NEW POSTS</li>
                 <li>MUST-READ</li>
             </ul>
         </div>

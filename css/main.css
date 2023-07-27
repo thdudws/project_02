@@ -48,8 +48,9 @@ img {
 }
 
 .logo img {
-    width: 70px;
-    height: 75px;
+    width: 65px;
+    height: auto;
+    margin: 10px;
 }
 
 .right {
@@ -488,7 +489,7 @@ img {
     padding-bottom: 10px;
 }
 
-.title>.tap li:hover {
+.title>.tap li:hover,  .title>.tap li.click{
     color: #7c7c7c;
     border-color: #7c7c7c;
     cursor: pointer;
