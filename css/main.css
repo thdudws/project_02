@@ -84,6 +84,10 @@ img {
     margin: 5px;
 }
 
+#ham {
+    display: none;
+}
+
 .nav_bottom {
     width: 1550px;
     display: flex;
@@ -299,7 +303,7 @@ img {
 
 #banner img {
     width: 100%;
-    background-image: url(../img/banner.jpg);
+    background-image: url(../img/banner2.jpg);
 }
 
 

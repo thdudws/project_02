@@ -65,6 +65,10 @@
         height: 15px;
         margin: 5px;
     }
+
+    #ham {
+        display: none;
+    }
     
     .nav_bottom {
         width: 100%;

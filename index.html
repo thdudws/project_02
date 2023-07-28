@@ -194,6 +194,17 @@
 
         setInterval(slide,1700);
 
+        $(function(){
+            $("#i").click(function(){
+                $(".nav_bottom").slideToggle();
+            });
+
+            $(window).resize(function(){
+                if(window.innerWidth<=767){
+                    $(".nav_bottom").hide();
+                }
+            });
+        });
 
 
     </script>
@@ -207,7 +218,6 @@
         <div id="nav_wrap">
             <div class="logo"><img src="img/logo_.png" alt=""></div>
 
-
             <div id="bar">
                 <ul class="right">
                     <li>Login</li>
@@ -216,9 +226,9 @@
                 </ul>
             </div>
         </div>
-
+        
         <div id="nav">
-            <img src="img/i.png" id="i">
+            <div id="ham"><img src="img/i.png" id="i"></div>
             <ul class="nav_bottom">
                 <li><a href="#">FASHION</a></li>
                 <li><a href="#">BEAUTY</a></li>
@@ -418,7 +428,7 @@
         </div>
 
         <div id="title">
-            <p>마리끌레르는 스타일 정보만 다루는 단순한 패션 매거진이 아닌 <br>
+            <p>마리끌레르는 스타일 정보만 다루는 단순한 패션 매거진이 아닌 
             패션 그 이상의 가치를 추구합니다. <br>
             <b>Think smart, Look amazing</b>
             </p>
