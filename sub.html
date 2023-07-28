@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <link rel="stylesheet" href="css/sub.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+
+       //nav 햄버거 제이쿼리
+       $(function(){
+            $("#i").click(function(){
+                $(".nav_bottom").slideToggle();
+            });
+
+            $(window).resize(function(){
+                if(window.innerWidth<=767){
+                    $(".nav_bottom").hide();
+                }
+            });
+        }); 
+
+
+    </script>
+
+</head>
+<body>
+
+    <header>
+
+        <div id="nav_wrap">
+            <div class="logo"><img src="img/logo_.png" alt=""></div>
+
+            <div id="bar">
+                <ul class="right">
+                    <li>Login</li>
+                    <li>Join</li>
+                    <li>About us</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="nav">
+            <div id="ham"><img src="img/i.png" id="i"></div>
+            <ul class="nav_bottom">
+                <li><a href="#">FASHION</a></li>
+                <li><a href="#">BEAUTY</a></li>
+                <li><a href="#">CELEB</a></li>     
+                <li><a href="#">RUNWAY</a></li>
+                <li><a href="#">WEDDING</a></li>        
+            </ul> 
+            
+        </div>
+
+
+    </header>
+
+
+
+    <article>
+        <div id="main">
+
+            <div id="title">
+                <h1>인스턴트 타투로 한소희처럼 힙해지기!</h1>
+                <h4>HOME ＞ BEAUTY ＞ 인스턴트 타투로 한소희처럼 힙해지기!</h4> 
+
+                <p>내 맘대로 꾸미는 인스턴트 타투 소개 <br>
+                    쉽고 간편한 인스턴트 타투로 다채로운 보디 스타일링 완성하기.</p>
+                
+                <div class="icon">
+                    <img src="img/icon5.png" alt="">
+                    <img src="img/icon6.png" alt="">
+                    <img src="img/icon7.png" alt="">
+                </div>
+            </div>
+
+            <div id="photo">
+
+                <div class="pic1">
+                    <img src="" alt="">
+                </div>
+
+                <div class="pic2">
+                    <img src="" alt="">
+                </div>
+
+                <div class="pic2">
+                    <img src="" alt="">
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="more">
+
+        </div>
+    </article>
+    
+
+
+    <footer>
+
+        <div id="notice">
+            
+            <div class="text_box">
+                <img src="img/logo.png" alt=""> 
+                <p>개인정보 취급 방침 | 이용약관 | 회사소개 | 광고제휴 | 정기구독 <br>
+                    (주)엠씨케이퍼블리싱 서울특별시 강남구 봉은사로 226 Tel 02.3458.7300 
+                    Fax 02.3458.7119 정기구독문의 Tel 02.3458.7122 사업자등록번호211-86-54814 <br>
+                    통신판매업신고제 2007-3210121-30-2-10512호 대표 손기연 <br>
+                    Copyright © 2017 MCK Publishing Co. Ltd. All Rights Reserved.</p>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.facebook.com/marieclairekorea" target="_blank"><img src="img/icon1.png" alt=""></a>
+                <a href="https://twitter.com/marieclairekorea" target="_blank"><img src="img/icon2.png" alt=""></a>
+                <a href="https://www.instagram.com/marieclairekorea" target="_blank"><img src="img/icon3.png" alt=""></a>
+                <a href="https://www.youtube.com/user/marieclairekr" target="_blank"><img src="img/icon4.png" alt=""></a>
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+</html>
