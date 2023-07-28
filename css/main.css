@@ -313,8 +313,8 @@ img {
     position: absolute;
     text-align: left;
     font-size: 18px;
-    top: 5%;
-    left: 30%;
+    top: 4%;
+    left: 13.5%;
     font-family: 'Roboto Slab', serif;
 }
 
@@ -390,9 +390,9 @@ img {
 #box>.layer p {
     font-size: 20px;
     font-family: 'SUITE-Regular';
-    background-color: #a7a7a796;
-    
+    background-color: #a7a7a796;   
     transition: 0.3s;
+    padding: 15px;
 }
 
 #box>.layer p:hover {  
@@ -410,8 +410,8 @@ img {
     color: #fff;
     position: absolute;
     text-align: left;
-    top: 88%;
-    left: 30%;
+    top: 85%;
+    left: 13.5%;
     font-size: 23px;
 }
 

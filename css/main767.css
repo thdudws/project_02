@@ -1,10 +1,11 @@
 @charset "uft-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 @media screen and (max-width:767px) {
     header {
         width: 100%;
-        height: 580px;
+        height: auto;
         /* background-color: antiquewhite; */
         
     }
@@ -91,8 +92,8 @@
 
     .nav_bottom {
         width: 100%;
-        height: 400px;
-        display: flex;
+        height: 300px;
+        display: none;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -117,12 +118,13 @@
     #name {
         width: 100%;
         height: 500px;
+        display: none;
         /* background-color: bisque; */
     }
     
     #name h1 {
-        font-size: 14vw;
-        font-family: 'Fira Sans Extra Condensed', sans-serif;
+        font-size: 3.5vmax;
+        font-family: 'Alfa Slab One', cursive;
         /* letter-spacing: 50px; */
         display: flex;
         flex-wrap: wrap;
@@ -143,7 +145,7 @@
     #main {
         /* background-color: #000; */
         width: 100%;
-        margin: 50px 0 -4px 0px;
+        margin: 0px 0 -4px 0px;
     }
     
     #main video {
@@ -217,7 +219,7 @@
     
     #slider>#content {
         width: 100%;
-        height: 3500px;
+        height: 3600px;
         background-color: #ffffff;
     }
 
@@ -230,7 +232,7 @@
     }
      
     #slider>#content>#content1 {
-        height: 850px;
+        height: 870px;
         /* background-color: pink;  */
         display: flex;
         flex-wrap: wrap;
@@ -241,7 +243,6 @@
     
     #content>#content1>.text {
         width: 100%;
-        padding: 20px 0;
      }
     
     #content>#content1>.cover {
@@ -257,7 +258,7 @@
     }
     
     #slider>#content>#content2 {
-        height: 950px;
+        height: 960px;
         /* background-color: rgb(175, 51, 72);  */
         display: flex;
         flex-wrap: wrap;
@@ -267,7 +268,7 @@
     
     #content>#content2>.text {
         width: 100%;
-        padding: 20px 0;
+        margin: 5px 0 20px 0;
      }
     
     #content>#content2>.cover {
@@ -275,7 +276,7 @@
     }
     
     #slider>#content>#content3 {
-        height: 850px;
+        height: 900px;
         /* background-color: pink;  */
         display: flex;
         flex-wrap: wrap;
@@ -286,7 +287,6 @@
     
     #content>#content3>.text {
         width: 100%;
-        padding: 20px 0;
      }
     
     #content>#content3>.cover {
@@ -294,7 +294,7 @@
     }
     
     #slider>#content>#content4 {
-        height: 820px;
+        height: 850px;
         /* background-color: pink;  */
         display: flex;
         flex-wrap: wrap;
@@ -304,8 +304,6 @@
     
     #content>#content4>.text {
         width: 100%;
-        padding: 20px 0;
-        margin: 20px 0px;
      }
     
     #content>#content4>.cover {
@@ -329,17 +327,17 @@
         /* background-color: #7c7c7c; */
         color: #fff;
         position: absolute;
-        text-align: right;
+        text-align: left;
         font-size: 10px;
-        top: 3%; 
-        right: 4%;
+        top: 3.5%; 
+        left: 4%;
         font-family: 'Roboto Slab', serif;
     }
     
     #banner>#since p {
         font-family: 'SUITE-Regular';
-        font-size: 15px;
-        text-align: right;
+        font-size: 14px;
+        text-align: left;
     }
     
     .name {
@@ -432,7 +430,7 @@
         position: absolute;
         text-align: left;
         top: 93%;
-        right: 4%;
+        left: 4%;
         font-size: 17px;
         font-family: 'SUITE-Regular';
     }
@@ -488,7 +486,7 @@
         margin: 0 auto;
         text-align: center;
         width: 100%;
-        height: 12%;
+        height: 10%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -498,7 +496,7 @@
         width: 100%;
         color: #fff;
         text-align: center;
-        font-size: 45px;
+        font-size: 40px;
         font-family: 'Roboto Slab', serif;
     }
     
@@ -512,7 +510,7 @@
     
     .title>.tap li {
         margin: 0 25px 0 20px;
-        font-size: 22px;
+        font-size: 20px;
         font-family: 'Lexend', sans-serif;
         border-bottom: 3px solid #fff;
         padding-bottom: 10px;

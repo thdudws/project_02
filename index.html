@@ -52,7 +52,17 @@
     
     
     <script>
+        $(function(){
+            $("#i").click(function(){
+                $(".nav_bottom").slideToggle();
+            });
 
+            $(window).resize(function(){
+                if(window.innerWidth<=767){
+                    $(".nav_bottom").hide();
+                }
+            });
+        });
         
         $(function(){
             // 포스트박스 변경 제이쿼리
@@ -194,17 +204,7 @@
 
         setInterval(slide,1700);
 
-        $(function(){
-            $("#i").click(function(){
-                $(".nav_bottom").slideToggle();
-            });
-
-            $(window).resize(function(){
-                if(window.innerWidth<=767){
-                    $(".nav_bottom").hide();
-                }
-            });
-        });
+        
 
 
     </script>
@@ -373,8 +373,9 @@
         <div id="since">
             <h1>MARIE CLAIRE KOREA</h1> <br>
             <h3>SINCE Mar 1993</h3> <br>
-            <p>마리끌레르는 1993년 프랑스에서 설립되 가장 영향력 있는 인터내셔널 콘텐츠 그룹입니다. <br>
-            [마리끌레르] 인터내셔널에서는 자매지를 포함해 54개 해외 에디션이 발행되고 있으며, <br>
+            <p>마리끌레르는 1993년 프랑스에서 설립되 가장 영향력 있는 <br> 
+            인터내셔널 콘텐츠 그룹입니다. [마리끌레르] 인터내셔널에서는 <br> 
+            자매지를 포함해 54개 해외 에디션이 발행되고 있으며, <br>
             매월 36개국에서 5천3백만 부가 팔리고 있습니다. </p>
         </div>
 
@@ -428,8 +429,8 @@
         </div>
 
         <div id="title">
-            <p>마리끌레르는 스타일 정보만 다루는 단순한 패션 매거진이 아닌 
-            패션 그 이상의 가치를 추구합니다. <br>
+            <p>마리끌레르는 스타일 정보만 다루는 단순한 <br>
+                패션 매거진이 아닌 패션 그 이상의 가치를 추구합니다. <br> 
             <b>Think smart, Look amazing</b>
             </p>
         </div>
