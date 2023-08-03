@@ -14,6 +14,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KOTRA_BOLD-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 
 article {
@@ -50,6 +65,8 @@ article {
 
 #title p {
     padding: 40px 0;
+    font-size: 18px;
+    font-family: 'OTWelcomeRA';
 }
 
 #title>.icon img {
@@ -62,7 +79,7 @@ article {
 }
 
 #title h1 {
-    font-size: 30px;
+    font-size: 33px;
 }
 
 
@@ -73,17 +90,41 @@ article {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: center;
+    justify-content: center;  
 }
 
 .pic1 {
     width: 64%;
+    height: 695px;
+    position: relative;
+    
     /* background-color: antiquewhite; */
 }
 
 .pic1 img {
     padding: 10px 0 0 0;  
-    border: 3px solid #fff;
+    border: 3px solid #fff; 
+}
+
+.pic1 .box {
+    width: 99.5%;
+    height: 40px;
+    background-color: #ffffffb9;
+    position: absolute;
+    top: 95.5%;
+    transition: all 0.35s ease-in-out;
+    opacity: 0;
+}
+
+.pic1:hover .box{
+    opacity: 1;
+    bottom: 0;
+}
+
+.pic1>.box p {
+    color: #353535;
+    padding: 5px 7px;
+    font-size: 16px;
 }
 
 #pic2 {
@@ -92,25 +133,72 @@ article {
 }
 
 #pic2 img {
+    width: 100%;
+    height: 100%;
     border: 2px solid #fff;
 }
 
 .pic2 {
     width: 100%;
-    height: 50%;
+    height: 353px;
     padding: 10px 0 0 0;
+    position: relative;
     /* background-color: paleturquoise; */
+}
+
+.pic2 .box {
+    width: 99.5%;
+    height: 40px;
+    background-color: #ffffffb9;
+    position: absolute;
+    top: 88%;
+    margin: 0 0 0 1.5px;
+    transition: all 0.35s ease-in-out;
+    opacity: 0;
+}
+
+.pic2:hover .box{
+    opacity: 1;
+    bottom: 0;
+}
+
+.pic2>.box p {
+    color: #353535;
+    padding: 5px 5px;
+    font-size: 17px;
 }
 
 .pic3 {
     width: 94%;
     height: auto;
+    position: relative;
     /* background-color: aliceblue; */
 }
 
 .pic3 img {
     width: 100%;
     height: auto;
+}
+
+.pic3>.box {
+    width: 100%;
+    height: 40px;
+    background-color: #ffffffb9;
+    position: absolute;
+    top: 96.2%;
+    transition: all 0.35s ease-in-out;
+    opacity: 0;
+}
+
+.pic3:hover .box{
+    opacity: 1;
+    bottom: 0;
+}
+
+.pic3>.box p {
+    color: #353535;
+    padding: 5px 5px;
+    font-size: 17px;
 }
 
 
@@ -120,6 +208,8 @@ article {
     height: 3%;
     text-align: center;
     padding: 70px 0;
+    font-family: 'OTWelcomeRA';
+    font-size: 17px;
     /* background-color: powderblue; */
 }
 
@@ -131,11 +221,12 @@ article {
     /* background-color: purple; */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .insta h1 {
     font-size: 30px;
+    font-family: 'KOTRA_BOLD-Bold';
     text-align: center;
     padding: 60px 0px;
 }
@@ -146,7 +237,7 @@ article {
 
 .peed {
     width: 60%;
-    height: 75%;
+    height: 74%;
     margin: 0px auto;
     border: 1px solid #666;
     /* background-color: aliceblue; */
@@ -168,11 +259,11 @@ article {
 }
 
 .name>.icon img {
-    width: 9%;
+    width: 50px;
+    height: 50px;
     margin: 1%;
     padding: 3px;
     border-radius: 100%;
-    border: 2px solid #0095f6;
 }
 
 .name>.icon img:nth-of-type(5) {
@@ -180,7 +271,7 @@ article {
 }
 
 .name button {
-    width: 200px;
+    width: 90px;
     height: 30px;
     margin: 10px;
     background-color: #0095f6;
@@ -191,18 +282,66 @@ article {
 
 .name button:hover {
     color: #000;
+    cursor: pointer;
 }
 
 .fin {
-    width: 100%;
-    height: 65%;
-    background-color: wheat;
+    width: 655px;
+    height: 820px;
+    position: relative;
+    overflow: hidden;
 }
- 
-.fin img {
+
+.fin_pic1, .fin_pic2, .fin_pic3, .fin_pic4, .fin_pic5 {
+    width: 1965px;
+    height: 820px;
+    /* background-color: wheat; */  
+}
+
+.fin li {
+    width: 655px; 
+    height: 820px;
+    float: left;
+}
+
+.fin li img {
     width: 100%;
    height: 100%;
    /* padding: 0 35px; */
+}
+
+.fin span {
+    position: absolute;
+    top: 50%;
+    display: block;
+    font-size: 38px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 40px;
+    background: rgba(255, 255, 255, 0.8) ;
+    cursor: pointer;
+    height: 50px;
+    transform: translateY(-50%);
+}
+
+.fin span:hover {
+    background: #fff;
+    color: #000;
+}
+
+.prev1 {
+    left: 0;
+    border-radius: 0 10px 10px 0px;
+    padding: 0 8px 0 2px;
+}
+
+.next1{
+    right: 0;
+    border-radius: 10px 0px 0px 10px;
+    padding: 0 2px 0 8px;
+}
+
+.comment {
+    position: relative;
 }
 
 .comment p:first-of-type {
@@ -211,6 +350,7 @@ article {
 
 .comment p:last-of-type {
     padding: 10px 10px 0;
+    color: #666;
 }
 
 .comment h3 {
@@ -239,7 +379,7 @@ article {
 }
 
 .icon2 img:hover {
-   background-color: #d2edff;
+   background: #ececec;
    border-radius: 100%;
 }
 
@@ -247,21 +387,59 @@ article {
     width: 50px;
 }
 
-.icon2 a:nth-of-type(4) {
+.icon2 a:nth-of-type(3) {
     float: right;
+}
+
+.hover_card {
+    width: 220px;
+    height: 140px;
+    background-color: #0095f6;
+    text-align: left;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    opacity: 0;
+    top: -36%;
+}
+
+.hover_card h4 {
+    font-size: 14px;
+}
+
+.hover_card h5 {
+    font-size: 12px;
+    padding: 0 0 0 10px;
+}
+
+.hover_card>.icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hover_card>.icon img {
+    width: 40px;
+    height: 40px;
+    margin: 1%;
+    padding: 3px;
+    border-radius: 100%;
 }
 
 .insta>.text {
     width: 100%;
-    padding: 50px 0;
+    padding: 65px 0;
     text-align: center;
     background-color: rgb(255, 255, 255);
+    font-family: 'OTWelcomeRA';
+    font-size: 18px;
 }
 
 
 #edit {
     text-align: center;
     padding: 35px 0;
+    font-family: 'SUITE-Regular';
+    font-size: 16px;
 }
 
 
@@ -286,6 +464,10 @@ article {
     display: flex;
 }
 
+.more_art:hover {
+    cursor: pointer;
+}
+
 .art {
     width: 40%;
 }
@@ -295,14 +477,16 @@ article {
    height: 190px;
 }
 
-.text_box {
+.textbox {
     width: 60%;
     height: 190px;
     /* background-color: aqua; */
     padding: 15px 10px;
 }
 
-.text_box p {
-    font-size: 14px;
+.textbox p {
+    font-size: 15px;
+    font-family: 'OTWelcomeRA';
     text-align: left;
+    padding: 10px 0;
 }
