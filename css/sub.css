@@ -235,6 +235,7 @@ article {
     font-size: 17px;
 }
 
+
 .peed {
     width: 60%;
     height: 74%;
@@ -285,6 +286,14 @@ article {
     cursor: pointer;
 }
 
+.nik:hover {
+    cursor: pointer;
+}
+
+.nik strong:hover {
+    text-decoration: underline;
+}
+
 .fin {
     width: 655px;
     height: 820px;
@@ -293,13 +302,13 @@ article {
 }
 
 .fin_pic1, .fin_pic2, .fin_pic3, .fin_pic4, .fin_pic5 {
-    width: 1965px;
+    width: 300%;
     height: 820px;
     /* background-color: wheat; */  
 }
 
 .fin li {
-    width: 655px; 
+    width: 33.33%; 
     height: 820px;
     float: left;
 }
@@ -315,32 +324,38 @@ article {
     top: 50%;
     display: block;
     font-size: 38px;
-    color: rgba(0, 0, 0, 0.6);
-    line-height: 40px;
-    background: rgba(255, 255, 255, 0.8) ;
     cursor: pointer;
-    height: 50px;
     transform: translateY(-50%);
 }
 
 .fin span:hover {
-    background: #fff;
-    color: #000;
+   opacity: 0.8;
 }
 
 .prev1 {
     left: 0;
-    border-radius: 0 10px 10px 0px;
-    padding: 0 8px 0 2px;
+}
+
+.prev1 img {
+    width: 35px;
+    height: 35px;
 }
 
 .next1{
     right: 0;
-    border-radius: 10px 0px 0px 10px;
-    padding: 0 2px 0 8px;
 }
 
+.next1 img {
+    width: 35px;
+    height: 35px;
+}
+
+
 .comment {
+    position: relative;
+}
+
+.comment div:first-child {
     position: relative;
 }
 
@@ -354,18 +369,18 @@ article {
 }
 
 .comment h3 {
+    padding: 10px 0 0 0;
+}
+
+.comment h3 a {
     color: #0095f6;
     font-size: 16px;
     padding: 10px 0 0 10px;
 }
 
 .comment h3:hover {
-    width: 180px;
-    border-bottom: 1px solid #8f8f8f;
-}
-
-.comment a:first-of-type:hover {
-    border-bottom: 1px solid #666;
+    text-decoration: underline;
+    cursor: pointer;    
 }
 
 .comment h4 {
@@ -378,9 +393,8 @@ article {
     /* background-color: #0095f6; */
 }
 
-.icon2 img:hover {
-   background: #ececec;
-   border-radius: 100%;
+.icon2 img:hover:not(:nth-child(3)) {
+   opacity: 0.5;
 }
 
 .icon2 img {
@@ -393,13 +407,18 @@ article {
 
 .hover_card {
     width: 220px;
-    height: 140px;
-    background-color: #0095f6;
+    height: 150px;
+    background-color: #fff;
     text-align: left;
     position: absolute;
-    transition: all 0.35s ease-in-out;
+    transition: all 0.5s ease-in-out;
     opacity: 0;
-    top: -36%;
+    /* top: -38.5%; */
+    bottom: 17px;
+    left: 1%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hover_card h4 {
@@ -407,22 +426,40 @@ article {
 }
 
 .hover_card h5 {
-    font-size: 12px;
-    padding: 0 0 0 10px;
+    font-size: 11px;
 }
 
 .hover_card>.icon {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
+    padding: 5px 0;
 }
 
-.hover_card>.icon img {
-    width: 40px;
-    height: 40px;
-    margin: 1%;
-    padding: 3px;
+.card>.hover_card>.icon img {
+    width: 45px;
+    height: 45px;
     border-radius: 100%;
+    padding: 3px;
+}
+
+.card_img {
+    width: 100%;
+    height: 75px;
+    /* background-color: #b7bfc5; */
+}
+
+.card_img img{
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 0 5px;
+}
+
+.card span:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .insta>.text {

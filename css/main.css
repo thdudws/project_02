@@ -555,10 +555,9 @@ img {
 }
 
 .post_box>#post1:hover {
-    background-color: #5d6796fd;
-    
+    background-color: #5d6796fd; 
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 /* list_post2 */
@@ -587,9 +586,8 @@ img {
 
 .post_box>#post2:hover {
     background-color: #5d6796fd;
-    
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 /* list_post3 */
@@ -618,9 +616,8 @@ img {
 
 .post_box>#post3:hover {
     background-color: #5d6796fd;
-    
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 /* list_post4 */
@@ -649,9 +646,8 @@ img {
 
 .post_box>#post4:hover {
     background-color: #5d6796fd;
-    
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 /* list_post5 */
@@ -679,10 +675,9 @@ img {
 }
 
 .post_box2>#post5:hover {
-    background-color: #5d6796fd;
-    
+    background-color: #5d6796fd; 
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 /* list_post6 */
@@ -712,7 +707,7 @@ img {
 .post_box2>#post6:hover {
     background-color: #5d6796fd;   
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 /* list_post7 */
@@ -741,9 +736,8 @@ img {
 
 .post_box2>#post7:hover {
     background-color: #5d6796fd;
-    
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 /* list_post8 */
@@ -772,9 +766,8 @@ img {
 
 .post_box2>#post8:hover {
     background-color: #5d6796fd;
-    
     cursor: pointer;
-    translate: 25px 0px;
+    transform: translateX(25px);
 }
 
 

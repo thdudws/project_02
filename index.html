@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="css/reset.css">
 
+    <link rel="stylesheet" href="css/common.css">
+
     <link rel="stylesheet" href="css/main1576.css">
 
     <link rel="stylesheet" href="css/main1024.css">
@@ -49,165 +51,14 @@
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    
+    <script src="js/nav.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/postbox.js"></script>
+    <script src="js/cover_img.js"></script>
+    <script src="js/slide.js"></script>
     
     <script>
-        //nav 햄버거 제이쿼리
-        $(function(){
-            $("#i").click(function(){
-                $(".nav_bottom").slideToggle();
-            });
-
-            $(window).resize(function(){
-                if(window.innerWidth<=767){
-                    $(".nav_bottom").hide();
-                }
-            });
-        });
         
-        $(function(){
-            // 포스트박스 변경 제이쿼리
-            $('.tap li:nth-of-type(1)').click(function () {                
-                $('.tap li').removeClass('click');
-                $(this).addClass('click');
-                $('.post_box').show().css('display','flex');
-                $('.post_box2').hide();
-            });
-
-            $('.tap li:nth-of-type(2)').click(function () {
-                $('.tap li').removeClass('click');
-                $(this).addClass('click');
-                $('.post_box2').show().css('display','flex');
-                $('.post_box').hide();
-            });
-
-
-            //#name 스크롤하면 글자 이동
-
-            $(window).scroll(function(){
-                let ws=$(this).scrollTop();
-                console.log(ws);
-                if(ws<800){
-                    $('#name span:nth-of-type(2)').animate({'margin-top':-ws/7},20);
-                    $('#name span:nth-of-type(3)').animate({'margin-top':ws/10},20);
-                    $('#name span:nth-of-type(4)').animate({'margin-top':-ws/3},20);
-                    $('#name span:nth-of-type(5)').animate({'margin-top':ws/3},20);
-                    $('#name span:nth-of-type(6)').animate({'margin-top':-ws/4},20);
-                }  
-
-                //#catalog>.menu li 스크롤하면 이동
-                let con1=$('#content1').offset().top; //1800
-                let con2=$('#content2').offset().top; //2770
-                let con3=$('#content3').offset().top; //3740
-                let con4=$('#content4').offset().top; //4710
-
-                console.log(con1);
-
-                if(ws>con1-500){
-                    // $('.menu li').css('color','white'); 
-                    // $('.menu li:nth-of-type(1)').css('color','#7b7cbb'); 
-                    $('.menu li').removeClass('active');
-                    $('.menu li:nth-of-type(1)').addClass('active'); 
-                    $('.menu li img').css("display", "none"); 
-                    $('.menu li:nth-of-type(1) img').css("display", "block");
-                                       
-                }
-                if (ws>con2-300){
-                    // $('.menu li').css('color','white');
-                    // $('.menu li:nth-of-type(2)').css('color','#7b7cbb'); 
-                    $('.menu li').removeClass('active');
-                    $('.menu li:nth-of-type(2)').addClass('active'); 
-                    $('.menu li img').css("display", "none"); 
-                    $('.menu li:nth-of-type(2) img').css("display", "block");               
-                }
-                if (ws>con3-300){
-                    // $('.menu li').css('color','white');
-                    // $('.menu li:nth-of-type(3)').css('color','#7b7cbb');
-                    $('.menu li').removeClass('active');
-                    $('.menu li:nth-of-type(3)').addClass('active');
-                    $('.menu li img').css("display", "none"); 
-                    $('.menu li:nth-of-type(3) img').css("display", "block");                  
-                }
-                if (ws>con4-200){    
-                    // $('.menu li').css('color','white');                
-                    // $('.menu li:nth-of-type(4)').css('color','#7b7cbb');
-                    $('.menu li').removeClass('active');
-                    $('.menu li:nth-of-type(4)').addClass('active'); 
-                    $('.menu li img').css("display", "none"); 
-                    $('.menu li:nth-of-type(4) img').css("display", "block");
-                }
-
-            });
-
-            //버튼으로 제어하는 슬라이드
-            function slide() {
-                if (window.matchMedia("(min-width:1024px)").matches) {
-                    $('.prev').click(function () {
-                        $('#slide_box .slider:last').prependTo('#slide_box');
-                        $('#slide_box').css('margin-left', '-50%');
-                        $('#slide_box').stop().animate({ marginLeft: '-10%' }, 800);
-                    });
-
-                    $('.next').click(function () {
-                        $('#slide_box').stop().animate({ marginLeft: '-50%' }, 800, function () {
-                            $('#slide_box .slider:first').appendTo('#slide_box');
-                            $('#slide_box').css({ marginLeft: '-10%' });
-                        });
-                    });
-
-
-                } else {
-                    $('.prev').click(function () {
-                        $('#slide_box .slider:last').prependTo('#slide_box');
-                        $('#slide_box').css('margin-left', '-100%');
-                        $('#slide_box').stop().animate({ marginLeft: '0' }, 800);
-                    });
-
-                    $('.next').click(function () {
-                        $('#slide_box').stop().animate({ marginLeft: '-100%' }, 800, function () {
-                            $('#slide_box .slider:first').appendTo('#slide_box');
-                            $('#slide_box').css({ marginLeft: '0' });
-                        });
-                    });
-                }
-            }
-
-            slide();
-
-            window.addEventListener('resize', slide)
-            
-
-     
-        });
-
-        let img_array = [["img/fashion1.jpg","img/fashion2.jpg",
-        "img/fashion3.jpg"], 
-        ["img/beauty1.jpg","img/beauty2.jpg",
-        "img/beauty3.jpg"],
-        ["img/cover1.jpg","img/cover2.jpg",
-        "img/cover3.jpg"],
-        ["img/wedding1.jpg","img/wedding2.jpg",
-        "img/wedding3.jpg"]];
-
-        let index = 0;
-
-        function slide(){
-            for(let i in img_array){
-                document['cover'+i].src = img_array[i][index];
-            }
-    
-            index++;
-            if(index>=img_array[0].length){
-                index=0;
-            }
-                        
-        }
-
-        setInterval(slide,1700);
-
-        
-
-
     </script>
 
 </head>
@@ -217,7 +68,9 @@
     <header>
 
         <div id="nav_wrap">
-            <div class="logo"><img src="img/logo_.png" alt=""></div>
+            <div class="logo">
+               <a href="index.html"  target="_blank"><img src="img/logo_.png" alt=""></a>
+            </div>
 
             <div id="bar">
                 <ul class="right">
@@ -229,13 +82,13 @@
         </div>
         
         <div id="nav">
-            <div id="ham"><img src="img/i.png" id="i"></div>
+            <div id="ham"><img src="img/i.png" alt=""></div>
             <ul class="nav_bottom">
-                <li><a href="#">FASHION</a></li>
-                <li><a href="#">BEAUTY</a></li>
-                <li><a href="#">CELEB</a></li>     
-                <li><a href="#">RUNWAY</a></li>
-                <li><a href="#">WEDDING</a></li>        
+                <li><a href="sub.html">FASHION</a></li>
+                <li><a href="sub.html">BEAUTY</a></li>
+                <li><a href="sub.html">CELEB</a></li>     
+                <li><a href="sub.html">RUNWAY</a></li>
+                <li><a href="sub.html">WEDDING</a></li>        
             </ul> 
             
         </div>
@@ -302,7 +155,7 @@
                 </div>
 
                 <div class="cover">
-                    <img src="img/fashion1.jpg" name="cover0">
+                    <img src="img/fashion1.jpg" name="cover0" alt="">
                 </div>
 
             </div>
@@ -326,7 +179,7 @@
                 </div>
 
                 <div class="cover">
-                    <img src="img/beauty1.jpg" name="cover1">
+                    <img src="img/beauty1.jpg" name="cover1" alt="">
                 </div>
 
             </div>
@@ -344,7 +197,7 @@
                 </div>
 
                 <div class="cover">
-                    <img src="img/cover1.jpg" name="cover2">
+                    <img src="img/cover1.jpg" name="cover2" alt="">
                 </div>
 
             </div>
@@ -360,7 +213,7 @@
                 </div>
 
                 <div class="cover">
-                    <img src="img/wedding1.jpg" name="cover3">
+                    <img src="img/wedding1.jpg" name="cover3" alt="">
                 </div>
 
             </div>

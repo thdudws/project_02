@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,63 +12,66 @@
 
     <link rel="stylesheet" href="css/sub.css">
 
+    <!-- <link rel="stylesheet" href="css/sub1576.css"> -->
+
+    <link rel="stylesheet" href="css/sub1030.css">
+
+    <link rel="stylesheet" href="css/sub768.css">
+
+    <link rel="stylesheet" href="css/sub501.css">
+
+    <link rel="stylesheet" href="css/sub500.css">
+
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/hover_card.js"></script>
 
     <script>
 
-       //nav 햄버거 제이쿼리
-       $(function(){
-            $("#i").click(function(){
-                $(".nav_bottom").slideToggle();
-            });
-
-            $(window).resize(function(){
-                if(window.innerWidth<=767){
-                    $(".nav_bottom").hide();
-                }
-            });
-        }); 
+        
 
         //버튼으로 움직이는 슬라이드
-        $(function(){
+        $(function () {
+
+            let w = $(".fin").width();
+
+            $(window).resize(function () {
+                w = $(".fin").width();
+            })
 
             $('.prev1').click(function () {
-                let n = $(this).parents(".insta").index()-2;
-                $('.fin_pic'+n+' li:last').prependTo('.fin_pic'+n);
-                $('.fin_pic'+n).css('margin-left', -655);
-                $('.fin_pic'+n).stop().animate({ marginLeft: 0 }, 700);
+                let n = $(this).parents(".insta").index() - 2;
+                $('.fin_pic' + n + ' li:last').prependTo('.fin_pic' + n);
+                $('.fin_pic' + n).css('margin-left', -w);
+                $('.fin_pic' + n).stop().animate({ marginLeft: 0 }, 700);
             });
 
             $('.next1').click(function () {
-                let n = $(this).parents(".insta").index()-2;
-                $('.fin_pic'+n).stop().animate({ marginLeft: -655 }, 700, function () {
-                    $('.fin_pic'+n+' li:first').appendTo('.fin_pic'+n);
-                    $('.fin_pic'+n).css({ marginLeft: 0 });
+                let n = $(this).parents(".insta").index() - 2;
+                $('.fin_pic' + n).stop().animate({ marginLeft: -w }, 700, function () {
+                    $('.fin_pic' + n + ' li:first').appendTo('.fin_pic' + n);
+                    $('.fin_pic' + n).css({ marginLeft: 0 });
                 });
             });
-                
+
         });
 
-        //hover_card 이벤트
-        $(function(){
-            $(".comment h3").mouseenter(function(){
-                $(".hover_card").css("opacity", "1");
-            });
-            $(".comment h3").mouseleave(function(){
-                $(".hover_card").css("opacity", "0");
-            });
-        });
-
+       
 
     </script>
 
 </head>
+
 <body>
 
     <header>
 
         <div id="nav_wrap">
-            <div class="logo"><img src="img/logo_.png" alt=""></div>
+            <div class="logo">
+                <a href="index.html" target="_blank"><img src="img/logo_.png" alt=""></a>
+            </div>
 
             <div id="bar">
                 <ul class="right">
@@ -77,17 +81,17 @@
                 </ul>
             </div>
         </div>
-        
+
         <div id="nav">
-            <div id="ham"><img src="img/i.png" id="i"></div>
+            <div id="ham"><img src="img/i.png" alt=""></div>
             <ul class="nav_bottom">
                 <li><a href="#">FASHION</a></li>
                 <li><a href="#">BEAUTY</a></li>
-                <li><a href="#">CELEB</a></li>     
+                <li><a href="#">CELEB</a></li>
                 <li><a href="#">RUNWAY</a></li>
-                <li><a href="#">WEDDING</a></li>        
-            </ul> 
-            
+                <li><a href="#">WEDDING</a></li>
+            </ul>
+
         </div>
 
 
@@ -100,15 +104,18 @@
 
             <div id="title">
                 <h1>인스턴트 타투로 한소희처럼 힙해지기!</h1>
-                <h4>HOME ＞ BEAUTY ＞ 인스턴트 타투로 한소희처럼 힙해지기!</h4> 
+                <h4>HOME ＞ BEAUTY ＞ 인스턴트 타투로 한소희처럼 힙해지기!</h4>
 
                 <p>내 맘대로 꾸미는 인스턴트 타투 소개 <br>
                     쉽고 간편한 인스턴트 타투로 다채로운 보디 스타일링 완성하기.</p>
-                
+
                 <div class="icon">
-                    <img src="img/icon5.png" alt=""> 
-                    <img src="img/icon6.png" alt="">
-                    <img src="img/icon7.png" alt="">
+                    <a href="https://www.facebook.com/marieclairekorea" target="_blank"><img src="img/icon5.png"
+                            alt=""></a>
+                    <a href="https://www.instagram.com/marieclairekorea/" target="_blank"><img src="img/icon6.png"
+                            alt=""></a>
+                    <a href="https://www.youtube.com/user/marieclairekr" target="_blank"><img src="img/icon7.png"
+                            alt=""></a>
                 </div>
             </div>
 
@@ -117,7 +124,9 @@
                 <div class="pic1">
                     <img src="img/pic1.png" alt="">
                     <div class="box">
-                        <a href="#"><P>@xeesoxee</P></a>
+                        <a href="https://www.instagram.com/xeesoxee/" target="_blank">
+                            <P>@xeesoxee</P>
+                        </a>
                     </div>
                 </div>
 
@@ -125,14 +134,18 @@
                     <div class="pic2">
                         <img src="img/pic2.jpg" alt="">
                         <div class="box">
-                            <a href="#"><P>@yerin_the_genuine</P></a>
+                            <a href="https://www.instagram.com/yerin_the_genuine/feed/" target="_blank">
+                                <P>@yerin_the_genuine</P>
+                            </a>
                         </div>
                     </div>
-                
+
                     <div class="pic2">
                         <img src="img/pic3.png" alt="">
                         <div class="box">
-                            <a href="#"><P>@jina_a_nana</P></a>
+                            <a href="https://www.instagram.com/jin_a_nana/" target="_blank">
+                                <P>@jina_a_nana</P>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -140,12 +153,14 @@
                 <div class="pic3">
                     <img src="img/pic4.png" alt="">
                     <div class="box">
-                        <a href="#"><P>@lee_hyolee</P></a>
+                        <a href="https://www.instagram.com/lee_hyolee/">
+                            <P>@lee_hyolee</P>
+                        </a>
                     </div>
-                </div>     
-                
+                </div>
+
             </div>
-            
+
             <div id="txt">
                 <p>최근 한소희, 현아, 나나, 이효리 등 스타일 좋은 셀럽들의 몸에서 화려한 타투가 포착되고 있다. <br>
                     <br>
@@ -165,69 +180,87 @@
                 <div class="peed">
                     <div class="name">
                         <div class="icon">
-                            <img src="img/logo2.jpg" alt="">
-                            <a href="https://www.instagram.com/lazystudio_official/?utm_source=ig_embed&ig_rid=a076b343-87a3-493c-a6ca-9b1b81e205c6" target="_blank">
-                                <h4>lazystudio_official <br>
-                                    <h5>28.0k 팔로워</h5>
-                                </h4>
-                            </a>
+
+                            <a href="https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1" target="_blank"><img
+                                    src="img/logo2.jpg" alt=""></a>
+                            <div class="nik">
+                                <strong>lazystudio_official</strong> <br>
+                                <h5>28.0k 팔로워</h5>
+                            </div>
+
                         </div>
-                       <a href="https://www.instagram.com/lazystudio_official/?utm_source=ig_embed&ig_rid=a076b343-87a3-493c-a6ca-9b1b81e205c6" target="_blank"><button>프로필 보기</button></a> 
+                        <button onclick="window.open('https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1')">프로필보기</button>
                     </div>
-            
+
                     <div class="fin">
                         <ul class="fin_pic1">
                             <li><img src="img/fin1.jpg" alt=""></li>
                             <li><img src="img/fin1_1.jpg" alt=""></li>
                             <li><img src="img/fin1_2.jpg" alt=""></li>
                         </ul>
-            
-                        <span class="prev1">&lt;</span>
-                        <span class="next1">&gt;</span>
+
+                        <span class="prev1"><img src="img/left_icon.png" alt=""></span>
+                        <span class="next1"><img src="img/right_icon.png" alt=""></span>
                     </div>
-            
+
                     <div class="comment">
-                        
-                        <div class="hover_card">
-                            
-                            <div class="icon">
-                                <img src="img/logo2.jpg" alt="">
-                                <a href="https://www.instagram.com/lazystudio_official/?utm_source=ig_embed&ig_rid=a076b343-87a3-493c-a6ca-9b1b81e205c6" target="_blank">
-                                    <h4>lazystudio_official <br>
+
+                        <div class="card">
+                            <a href="https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1"
+                                target="_blank"></a>
+                            <div class="hover_card">
+
+                                <div class="icon">
+                                    <img src="img/logo2.jpg" alt="">
+
+                                    <div class="nik">
+                                        <span><a href="https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1"
+                                                target="_blank"><b>lazystudio_official</b></a></span> <br>
                                         <h5>게시물 151개, 28.0k 팔로워</h5>
-                                    </h4>
-                                </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="card_img">
+                                    <img src="img/card1.jpg" alt="">
+                                    <img src="img/card1_1.jpg" alt="">
+                                </div>
                             </div>
+                            <h3><a href="https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1"
+                                    target="_blank">Instagram에서 더 보기</a></h3>
+
+
                         </div>
-                        
-                        <a href="https://www.instagram.com/lazystudio_official/?utm_source=ig_embed&ig_rid=a076b343-87a3-493c-a6ca-9b1b81e205c6" target="_blank">
-                            <h3>Instagram에서 더 보기</h3>
-                            </a>
-                         <br>
+                        <br>
                         <hr>
                         <div class="icon2">
-                            <a href="https://www.instagram.com/lazystudio_official/?utm_source=ig_embed&ig_rid=a076b343-87a3-493c-a6ca-9b1b81e205c6" target="_blank"><img src="img/icon8.png" alt=""></a>
-                            <a href="https://www.instagram.com/lazystudio_official/?utm_source=ig_embed&ig_rid=a076b343-87a3-493c-a6ca-9b1b81e205c6" target="_blank"><img src="img/icon9.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1"
+                                target="_blank"><img src="img/icon8.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1"
+                                target="_blank"><img src="img/icon9.png" alt=""></a>
                             <img src="img/icon10.png" alt="">
                             <a href="#"><img src="img/icon11.png" alt=""></a>
                         </div>
-            
-                        <h4>lazystudio_official</h4> <br>
+
+                        <a href="https://www.instagram.com/p/CqCwYSxuGNq/?img_index=1"
+                            target="_blank">
+                            <h4>lazystudio_official</h4>
+                        </a> <br>
                         <p>
-            
                             다채로운 컬러 타투를 다양하게 연출해 보세요. <br>
                             타투 위치를 마음껏 시도해 보고 결정하세요. <br>
                             <br>
                             find your tatto <br>
                             <br>
                             #레이지스튜디오#템포러리타투 <br> <br>
-                            <hr>
+                            
                         </p>
+<hr>
                         <p>댓글달기...</p>
-            
+
                     </div>
-            
-            
+
+
                 </div>
                 <div class="text">
                     'find your tattoo'라는 슬로건 아래 성공적인 타투를 응원한다는 의미를 담고 있는 레이지스튜디오. <br>
@@ -247,53 +280,81 @@
                     <div class="name">
                         <div class="icon">
                             <img src="img/logo3.png" alt="">
-                            <a href="https://www.instagram.com/instant.tattoo_official/?utm_source=ig_embed&ig_rid=e72a6925-f293-49cc-9fd8-3b9644ceabc4" target="_blank">
-                                <h4>instant.tattoo_official<br>
-                                    <h5>36.5k 팔로워</h5>
-                                </h4>
-                            </a>
+
+                            <div class="hik">
+                                <strong><a
+                                        href="https://www.instagram.com/p/CJ0m6EXppjW/"
+                                        target="_blank">instant.tattoo_official</a></strong><br>
+                                <h5>36.5k 팔로워</h5>
+                            </div>
+
                         </div>
-                        <a href="https://www.instagram.com/instant.tattoo_official/?utm_source=ig_embed&ig_rid=e72a6925-f293-49cc-9fd8-3b9644ceabc4" target="_blank"><button>프로필 보기</button></a>
+                        <button onclick="window.open('https://www.instagram.com/p/CJ0m6EXppjW/')">프로필 보기</button>
                     </div>
-            
+
                     <div class="fin">
                         <ul class="fin_pic2">
                             <li><img src="img/fin2.jpg" alt=""></li>
                             <li><img src="img/fin2_1.jpg" alt=""></li>
                         </ul>
-            
-                        <span class="prev1">&lt;</span>
-                        <span class="next1">&gt;</span>
+
+                        <span class="prev1"><img src="img/left_icon.png" alt=""></span>
+                        <span class="next1"><img src="img/right_icon.png" alt=""></span>
                     </div>
-            
+
                     <div class="comment">
-                        <a href="https://www.instagram.com/instant.tattoo_official/?utm_source=ig_embed&ig_rid=e72a6925-f293-49cc-9fd8-3b9644ceabc4" target="_blank">
-                            <h3>Instagram에서 더 보기</h3>
-                        </a><br>
+                        <div class="card">
+                            <a href="https://www.instagram.com/p/CJ0m6EXppjW/"
+                                target="_blank"></a>
+                            <div class="hover_card">
+
+                                <div class="icon">
+                                    <img src="img/logo3.png" alt="">
+
+                                    <div class="nik">
+                                        <span><a href="https://www.instagram.com/p/CJ0m6EXppjW/"
+                                                target="_blank"><b>instant.tattoo_official</b></a></span><br>
+                                        <h5>게시물 545개, 36.5k 팔로워</h5>
+                                    </div>
+
+
+                                </div>
+                                <div class="card_img">
+                                    <img src="img/card2.jpg" alt="">
+                                    <img src="img/card2_2.jpg" alt="">
+                                </div>
+                            </div>
+                            <h3><a href="https://www.instagram.com/p/CJ0m6EXppjW/"
+                                    target="_blank">Instagram에서 더 보기</a></h3>
+
+
+                        </div>
+                        <br>
                         <hr>
                         <div class="icon2">
-                            <a href="https://www.instagram.com/instant.tattoo_official/?utm_source=ig_embed&ig_rid=e72a6925-f293-49cc-9fd8-3b9644ceabc4" target="_blank"><img src="img/icon8.png" alt=""></a>
-                            <a href="https://www.instagram.com/instant.tattoo_official/?utm_source=ig_embed&ig_rid=e72a6925-f293-49cc-9fd8-3b9644ceabc4" target="_blank"><img src="img/icon9.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CJ0m6EXppjW/"
+                                target="_blank"><img src="img/icon8.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CJ0m6EXppjW/"
+                                target="_blank"><img src="img/icon9.png" alt=""></a>
                             <img src="img/icon10.png" alt="">
-                            <a href="https://www.instagram.com/instant.tattoo_official/?utm_source=ig_embed&ig_rid=e72a6925-f293-49cc-9fd8-3b9644ceabc4" target="_blank"><img src="img/icon11.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CJ0m6EXppjW/"
+                                target="_blank"><img src="img/icon11.png" alt=""></a>
                         </div>
-            
+
                         <h4>instant.tattoo_official</h4> <br>
-                        <p>
-            
-                            작지만 소중한 우리의 사랑처럼... <br>
+                        <p> 작지만 소중한 우리의 사랑처럼... <br>
                             작지만 아찔한 TTT 러브 컬렉션. #23SSTTT #인스턴트타투 <br>
                             <br>
                             <br>
                             #리본타투#미니타투#라인타투#타투스티커 <br> <br>
                             <br>
-                            <hr>
-                        </p>
+                            
+                        </p><hr>
                         <p>댓글달기...</p>
-            
+
                     </div>
-            
-            
+
+
                 </div>
                 <div class="text">
                     물 없이 단 10초 만에 실제 타투처럼 표현이 가능한 인스턴트타투의 타투 스티커. <br>
@@ -311,38 +372,67 @@
                     <div class="name">
                         <div class="icon">
                             <img src="img/logo4.png" alt="">
-                            <a href="https://www.instagram.com/mellowhatever/?utm_source=ig_embed&ig_rid=828ffaf5-c354-408a-8dc7-0dce68bc1372" target="_blank">
-                                <h4>mellowhatever <br>
-                                    <h5>Seoul, Korea</h5>
-                                </h4>
-                            </a>
+                            <a href="https://www.instagram.com/p/BrABUUUHeMp/"
+                                target="_blank"></a>
+                            <div class="nik">
+                                <strong>mellowhatever</strong> <br>
+                                <h5>Seoul, Korea</h5>
+                            </div>
                         </div>
-                        <a href="https://www.instagram.com/mellowhatever/?utm_source=ig_embed&ig_rid=828ffaf5-c354-408a-8dc7-0dce68bc1372" target="_blank"><button>프로필 보기</button></a>
+                       
+                            <button onclick="window.open('https://www.instagram.com/p/BrABUUUHeMp/')">프로필 보기</button>
                     </div>
-            
+
                     <div class="fin">
                         <ul class="fin_pic3">
                             <li><img src="img/fin3.jpg" alt=""></li>
                             <li><img src="img/fin3_1.jpg" alt=""></li>
                             <li><img src="img/fin3_2.jpg" alt=""></li>
                         </ul>
-            
-                        <span class="prev1">&lt;</span>
-                        <span class="next1">&gt;</span>
+
+                        <span class="prev1"><img src="img/left_icon.png" alt=""></span>
+                        <span class="next1"><img src="img/right_icon.png" alt=""></span>
                     </div>
-            
+
                     <div class="comment">
-                        <a href="https://www.instagram.com/mellowhatever/?utm_source=ig_embed&ig_rid=828ffaf5-c354-408a-8dc7-0dce68bc1372" target="_blank">
-                            <h3>Instagram에서 더 보기</h3>
-                        </a><br>
+                        <div class="card">
+                            <a href="https://www.instagram.com/p/BrABUUUHeMp/"
+                                target="_blank"></a>
+                            <div class="hover_card">
+
+                                <div class="icon">
+                                    <img src="img/logo4.png" alt="">
+
+                                    <div class="nik">
+                                        <span><a href="https://www.instagram.com/p/BrABUUUHeMp/"
+                                                target="_blank"><b>mellowhatever</b></a></span><br>
+                                        <h5>@hi_mello_ 게시물 565개 </h5>
+                                    </div>
+
+
+                                </div>
+                                <div class="card_img">
+                                    <img src="img/card3.jpg" alt="">
+                                    <img src="img/card3_1.jpg" alt="">
+                                </div>
+                            </div>
+                            <h3><a href="https://www.instagram.com/p/BrABUUUHeMp/"
+                                    target="_blank">Instagram에서 더 보기</a></h3>
+
+
+                        </div>
+                        <br>
                         <hr>
                         <div class="icon2">
-                            <a href="https://www.instagram.com/mellowhatever/?utm_source=ig_embed&ig_rid=828ffaf5-c354-408a-8dc7-0dce68bc1372" target="_blank"><img src="img/icon8.png" alt=""></a>
-                            <a href="https://www.instagram.com/mellowhatever/?utm_source=ig_embed&ig_rid=828ffaf5-c354-408a-8dc7-0dce68bc1372" target="_blank"><img src="img/icon9.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/BrABUUUHeMp/"
+                                target="_blank"><img src="img/icon8.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/BrABUUUHeMp/"
+                                target="_blank"><img src="img/icon9.png" alt=""></a>
                             <img src="img/icon10.png" alt="">
-                            <a href="https://www.instagram.com/mellowhatever/?utm_source=ig_embed&ig_rid=828ffaf5-c354-408a-8dc7-0dce68bc1372" target="_blank"><img src="img/icon11.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/BrABUUUHeMp/"
+                                target="_blank"><img src="img/icon11.png" alt=""></a>
                         </div>
-            
+
                         <h4>mellowhatever</h4> <br>
                         <p>
                             진짜 타투같은 kc인증 멜로 타투스티커 <br>
@@ -351,13 +441,13 @@
                             <br>
                             #mello#mellowhatever#타투스티커 <br> <br>
                             <br>
-                            <hr>
-                        </p>
+                           
+                        </p> <hr>
                         <p>댓글달기...</p>
-            
+
                     </div>
-            
-            
+
+
                 </div>
                 <div class="text">
                     <p>귀여운 캐릭터 모양의 도안이 타투의 진입장벽을 낮춰줄지도! <br>
@@ -377,38 +467,70 @@
                 <div class="peed">
                     <div class="name">
                         <div class="icon">
-                            <img src="img/logo5.png">
-                            <a href="https://www.instagram.com/heukstudio/?utm_source=ig_embed&ig_rid=77b174f0-a280-4092-8481-be4596f3d142" target="_blank">
-                                <h4>heukstudio<br>
-                                    <h5>793 팔로워</h5>
-                                </h4>
-                            </a>
+                            <img src="img/logo5.png" alt="">
+                            <a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                target="_blank"></a>
+                                
+                            <div class="nik">
+                                <strong>heukstudio</strong> <br>
+                                <h5>793 팔로워</h5>
+                            </div>
+
+
                         </div>
-                        <a href="https://www.instagram.com/heukstudio/?utm_source=ig_embed&ig_rid=77b174f0-a280-4092-8481-be4596f3d142" target="_blank"><button>프로필 보기</button></a>
+                        <button onclick="window.open('https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1')">프로필 보기</button>
                     </div>
-            
+
                     <div class="fin">
                         <ul class="fin_pic4">
                             <li><img src="img/fin4.png" alt=""></li>
                             <li><img src="img/fin4_2.png" alt=""></li>
                         </ul>
-            
-                        <span class="prev1"> &lt;</span>
-                        <span class="next1"> &gt;</span>
+
+                        <span class="prev1"><img src="img/left_icon.png" alt=""></span>
+                        <span class="next1"><img src="img/right_icon.png" alt=""></span>
                     </div>
-            
+
                     <div class="comment">
-                        <a href="https://www.instagram.com/heukstudio/?utm_source=ig_embed&ig_rid=77b174f0-a280-4092-8481-be4596f3d142" target="_blank">
-                            <h3>Instagram에서 더 보기</h3>
-                        </a><br>
+                        <div class="card">
+                            <a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                target="_blank"></a>
+                            <div class="hover_card">
+
+                                <div class="icon">
+                                    <img src="img/logo5.png" alt="">
+                                    <a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                        target="_blank"></a>
+                                    <div class="nik">
+                                        <span><a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                                target="_blank"><b>heukstudio</b></a></span><br>
+                                        <h5>게시물 84개, 799 팔로워</h5>
+                                    </div>
+
+
+                                </div>
+                                <div class="card_img">
+                                    <img src="img/card4.jpg" alt="">
+                                    <img src="img/card4_1.jpg" alt="">
+                                </div>
+                            </div>
+                            <h3><a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                    target="_blank">Instagram에서 더 보기</a></h3>
+
+
+                        </div>
+                        <br>
                         <hr>
                         <div class="icon2">
-                            <a href="https://www.instagram.com/heukstudio/?utm_source=ig_embed&ig_rid=77b174f0-a280-4092-8481-be4596f3d142" target="_blank"><img src="img/icon8.png" alt=""></a>
-                            <a href="https://www.instagram.com/heukstudio/?utm_source=ig_embed&ig_rid=77b174f0-a280-4092-8481-be4596f3d142" target="_blank"><img src="img/icon9.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                target="_blank"><img src="img/icon8.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                target="_blank"><img src="img/icon9.png" alt=""></a>
                             <img src="img/icon10.png" alt="">
-                            <a href="https://www.instagram.com/heukstudio/?utm_source=ig_embed&ig_rid=77b174f0-a280-4092-8481-be4596f3d142" target="_blank"><img src="img/icon11.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CpgqeVTBI_F/?img_index=1"
+                                target="_blank"><img src="img/icon11.png" alt=""></a>
                         </div>
-            
+
                         <h4>heukstudio</h4> <br>
                         <p>
                             바닷속을 잘 들여다보면 형형색색 예쁜 친구들을 발견할 수 있죠. <br>
@@ -418,13 +540,13 @@
                             <br>
                             #흙studio#heukstudio#타투#타투스티커 <br> <br>
                             <br>
-                            <hr>
-                        </p>
+                            
+                        </p><hr>
                         <p>댓글달기...</p>
-            
+
                     </div>
-            
-            
+
+
                 </div>
                 <div class="text">
                     맑은 수채화 색감과 풀, 열매, 생물, 별자리 등 자연을 바탕으로 디자인한 도안이 특징인 흙 스튜디오의 타투 스티커. <br>
@@ -441,38 +563,68 @@
                 <div class="peed">
                     <div class="name">
                         <div class="icon">
-                            <img src="img/logo6.jpg">
-                            <a href="https://www.instagram.com/imprintu_official/?utm_source=ig_embed&ig_rid=90d8d15e-ef32-42ba-b323-c6cd57e0e99e" target="_blank">
-                                <h4>imprintu_official<br>
-                                    <h5>37.5K 팔로워</h5>
-                                </h4>
-                            </a>
+                            <img src="img/logo6.jpg" alt="">
+                            <a href="https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading"
+                                target="_blank"></a>
+                            <div class="nik">
+                                <strong>imprintu_official</strong> <br>
+                                <h5>37.5K 팔로워</h5>
+                            </div>
+
+
                         </div>
-                        <a href="https://www.instagram.com/imprintu_official/?utm_source=ig_embed&ig_rid=90d8d15e-ef32-42ba-b323-c6cd57e0e99e" target="_blank"><button>프로필 보기</button></a>
+                        <button  onclick="window.open('https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading')">프로필 보기</button>
                     </div>
-            
+
                     <div class="fin">
                         <ul class="fin_pic5">
                             <li><img src="img/fin5.jpg" alt=""></li>
                             <li><img src="img/fin5_1.jpg" alt=""></li>
                         </ul>
-            
-                        <span class="prev1">&lt;</span>
-                        <span class="next1">&gt;</span>
+
+                        <span class="prev1"><img src="img/left_icon.png" alt=""></span>
+                        <span class="next1"><img src="img/right_icon.png" alt=""></span>
                     </div>
-            
+
                     <div class="comment">
-                        <a href="https://www.instagram.com/imprintu_official/?utm_source=ig_embed&ig_rid=90d8d15e-ef32-42ba-b323-c6cd57e0e99e" target="_blank">
-                            <h3>Instagram에서 더 보기</h3>
-                        </a><br>
+                        <div class="card">
+                            <a href="https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading"
+                                target="_blank"></a>
+                            <div class="hover_card">
+
+                                <div class="icon">
+                                    <img src="img/logo6.jpg" alt="">
+
+                                    <div class="nik">
+                                        <span><a href="https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading"
+                                                target="_blank"><b>imprintu_official</b></a></span> <br>
+                                        <h5>게시물 33개, 38K 팔로워</h5>
+                                    </div>
+
+
+                                </div>
+                                <div class="card_img">
+                                    <img src="img/card5.jpg" alt="">
+                                    <img src="img/card5_1.jpg" alt="">
+                                </div>
+                            </div>
+                            <h3><a href="https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading"
+                                    target="_blank">Instagram에서 더 보기</a></h3>
+
+
+                        </div>
+                        <br>
                         <hr>
                         <div class="icon2">
-                            <a href="https://www.instagram.com/imprintu_official/?utm_source=ig_embed&ig_rid=90d8d15e-ef32-42ba-b323-c6cd57e0e99e" target="_blank"><img src="img/icon8.png" alt=""></a>
-                            <a href="https://www.instagram.com/imprintu_official/?utm_source=ig_embed&ig_rid=90d8d15e-ef32-42ba-b323-c6cd57e0e99e" target="_blank"><img src="img/icon9.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading"
+                                target="_blank"><img src="img/icon8.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading"
+                                target="_blank"><img src="img/icon9.png" alt=""></a>
                             <img src="img/icon10.png" alt="">
-                            <a href="https://www.instagram.com/imprintu_official/?utm_source=ig_embed&ig_rid=90d8d15e-ef32-42ba-b323-c6cd57e0e99e" target="_blank"><img src="img/icon11.png" alt=""></a>
+                            <a href="https://www.instagram.com/p/CsqMPPoOWXI/?utm_source=ig_embed&utm_campaign=loading"
+                                target="_blank"><img src="img/icon11.png" alt=""></a>
                         </div>
-            
+
                         <h4>imprintu_official</h4>
                         <p>
                             다가오는 여름 얇아진 옷차림에 임프린투를 더해보세요. <br>
@@ -482,13 +634,13 @@
                             <br>
                             #임프린투#IMPRINTU#데일리타투#dailytatoo <br> <br>
                             <br>
-                            <hr>
-                        </p>
+                            
+                        </p><hr>
                         <p>댓글달기...</p>
-            
+
                     </div>
-            
-            
+
+
                 </div>
                 <div class="text">
                     타투 프린트기까지 나오는 시대! 핸드폰처럼 가지고 다니며 언제 어디서든 타투를 할 수 있게 됐으니. <br>
@@ -499,35 +651,37 @@
                 </div>
             </div>
 
-
-            <p id="edit"> 
-                연관 검색어 <br> 
-                나나, 레이지스튜디오, 멜로, 이효리, 인스턴트타투, 임프린투, 타투, 타투룩, 타투뷰티,<br>  
-                타투스티커, 타투프린트, 타투프린트기, 한소희, 백예린, 흙스튜디오 <br> <br>
-                editor 송 현아 <br>
-                photography WWW.INSTAGRAM.COM(@yerin_the_genuine·@jina_a_nana·@lee_hyolee·@xwwsoxee)
+            <div id="edit">
+                <p>
+                    연관 검색어 <br>
+                    나나, 레이지스튜디오, 멜로, 이효리, 인스턴트타투, 임프린투, 타투, 타투룩, 타투뷰티,<br>
+                    타투스티커, 타투프린트, 타투프린트기, 한소희, 백예린, 흙스튜디오 <br> <br>
+                    editor 송 현아 <br>
+                    photography WWW.INSTAGRAM.COM <br>
+                    (@yerin_the_genuine·@jina_a_nana·@lee_hyolee·@xwwsoxee)
             
-            </p>
+                </p>
+            </div>
         </div>
 
-        
+
 
         <div id="more">
             <br>
             <hr>
             <h2>POSTS FOR YOU</h2>
             <hr>
-            
-            
+
+
             <div class="more_art">
                 <div class="art">
                     <img src="img/art1.png" alt="">
                 </div>
                 <div class="textbox">
-                    <h3>발레코어룩 따라잡기</h3> 
+                    <h3>발레코어룩 따라잡기</h3>
 
-                    <p> ‘발레’와 ‘놈코어’의 합성어인 <br>‘발레코어’룩!  <br>
-                        셀럽 룩을 통해 패션 핫 키워드로 떠오른 발레코어룩의 
+                    <p> ‘발레’와 ‘놈코어’의 합성어인 <br>‘발레코어’룩! <br>
+                        셀럽 룩을 통해 패션 핫 키워드로 떠오른 발레코어룩의
                         스타일링 포인트를 알아볼까요? <br>
                         <br>
                         Editor 김 지혜
@@ -540,12 +694,15 @@
                     <img src="img/art2.jpg" alt="">
                 </div>
                 <div class="textbox">
-                    <h3>미우미우 썸머 클럽 <br> 말리부!</h3>
-                    <p>미우미우 썸머 클럽 말리부 <br>
-                        캘리포니아 말리부 피어(Malibu Pier)에서 열린
-                        '미우미우 썸머 클럽 말리부(Miu Miu Summer Club Malibu)'. <br>
+                    <h3>이번 여름엔 두건 어때?</h3>
+                    <p>
+                        올여름 조금 더 특별한 스타일링을 원한다면
+                        두건을 써보는 건 어떤가요? <br>
                         <br>
-                        Editor 강 서윤
+                        뜨거운 햇빛의 열기를 막아줄 뿐만 아니라
+                        심심한 룩의 포인트가 됩니다. <br>
+                        <br>
+                        Editor 정 유진
                     </p>
                 </div>
             </div>
@@ -555,30 +712,33 @@
                     <img src="img/art3.jpg" alt="">
                 </div>
                 <div class="textbox">
-                    <h3>Artistry is calling</h3> 
-                    <p>르세라핌 채원과 메이크업포에버의 만남.
-                        메이크업포에버 아티스트 블러쉬의 다채롭고 무궁무진한 컬러 플레이. <br>
+                    <h3>바캉스는 탱크톱과 함께</h3>
+                    <p>여름 휴가 막바지니
+                        늦기 전에 더욱 여름스러운 스타일을 즐겨아죠. <br>
                         <br>
-                        Editor 김 현민
+                        여름 휴가를 더욱 휴가처럼 만들어줄 <br>
+                        #탱크톱 룩을 소개할게요.
+                        <br> <br>
+                        Editor 강 서윤
                     </p>
-                </div> 
-                
+                </div>
+
             </div>
-    
-                
+
+
         </div>
     </article>
-    
+
 
 
     <footer>
 
         <div id="notice">
-            
+
             <div class="text_box">
-                <img src="img/logo.png" alt=""> 
+                <img src="img/logo.png" alt="">
                 <p>개인정보 취급 방침 | 이용약관 | 회사소개 | 광고제휴 | 정기구독 <br>
-                    (주)엠씨케이퍼블리싱 서울특별시 강남구 봉은사로 226 Tel 02.3458.7300 
+                    (주)엠씨케이퍼블리싱 서울특별시 강남구 봉은사로 226 Tel 02.3458.7300
                     Fax 02.3458.7119 정기구독문의 Tel 02.3458.7122 사업자등록번호211-86-54814 <br>
                     통신판매업신고제 2007-3210121-30-2-10512호 대표 손기연 <br>
                     Copyright © 2017 MCK Publishing Co. Ltd. All Rights Reserved.</p>
@@ -587,12 +747,15 @@
             <div class="icon">
                 <a href="https://www.facebook.com/marieclairekorea" target="_blank"><img src="img/icon1.png" alt=""></a>
                 <a href="https://twitter.com/marieclairekorea" target="_blank"><img src="img/icon2.png" alt=""></a>
-                <a href="https://www.instagram.com/marieclairekorea" target="_blank"><img src="img/icon3.png" alt=""></a>
-                <a href="https://www.youtube.com/user/marieclairekr" target="_blank"><img src="img/icon4.png" alt=""></a>
+                <a href="https://www.instagram.com/marieclairekorea" target="_blank"><img src="img/icon3.png"
+                        alt=""></a>
+                <a href="https://www.youtube.com/user/marieclairekr" target="_blank"><img src="img/icon4.png"
+                        alt=""></a>
             </div>
 
         </div>
 
     </footer>
 </body>
+
 </html>
