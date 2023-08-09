@@ -13,7 +13,7 @@ let img_array = [["img/fashion1.jpg","img/fashion2.jpg",
 
         function slide(){
             for(let i in img_array){
-                document['cover'+i].src = img_array[i][index];
+                document.querySelector('#cover'+i).src = img_array[i][index];
             }
     
             index++;
