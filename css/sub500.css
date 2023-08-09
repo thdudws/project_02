@@ -6,7 +6,7 @@
     article {
         margin: 0 auto;
         width: 100%;
-        height: 10350px;
+        height: auto;
         /* background-color: antiquewhite; */
         display: flex;
         flex-direction: column;
@@ -22,7 +22,7 @@
     
     #title {
         width: 100%;
-        height: 4%;
+        height: 400px;
         text-align: center;
         /* background-color: aliceblue; */
         display: flex;
@@ -33,13 +33,13 @@
     
     #title h4 {
         padding: 0 0 30px 0;
-        font-size: 15px;
+        font-size: 13px;
         font-family: 'SUITE-Regular';
     }
     
     #title p {
         padding: 40px 0;
-        font-size: 16px;
+        font-size: 15px;
         font-family: 'OTWelcomeRA';
     }
     
@@ -53,13 +53,13 @@
     }
     
     #title h1 {
-        font-size: 27px;
+        font-size: 24px;
     }
     
     
     #photo {
         width: 100%;
-        height: 20%;
+        height: 19%;
         /* background-color: pink; */
         display: flex;
         flex-wrap: wrap;
@@ -69,22 +69,24 @@
     }
     
     .pic1 {
-        width: 95%;
+        width: 100%;
         height: auto;
         position: relative;
         /* background-color: antiquewhite; */
     }
     
     .pic1 img {
-        border: 3px solid #fff; 
+        /* border: 3px solid #fff;  */
+        padding: 10px;
     }
     
     .pic1 .box {
-        width: 99.5%;
+        width: 95%;
         height: 40px;
         background-color: #ffffffb9;
         position: absolute;
-        top: 92%;
+        top: 89%;
+        left: 2.5%;
         transition: all 0.35s ease-in-out;
         opacity: 0;
     }
@@ -101,14 +103,15 @@
     }
     
     #pic2 {
-        width: 95%;
+        width: 100%;
         height: auto;
     }
     
     #pic2 img {
         width: 100%;
         /* height: 100%; */
-        border: 2px solid #fff;
+        /* border: 2px solid #fff; */
+        padding: 10px;
     }
     
     .pic2 {
@@ -120,11 +123,12 @@
     }
     
     .pic2 .box {
-        width: 99.5%;
+        width: 95%;
         height: 40px;
         background-color: #ffffffb9;
         position: absolute;
-        top: 92%;
+        top: 90%;
+        left: 2.2%;
         margin: 0 0 0 1.5px;
         transition: all 0.35s ease-in-out;
         opacity: 0;
@@ -142,11 +146,12 @@
     }
     
     .pic3 {
-        width: 95%;
+        width: 100%;
         height: auto;
         position: relative;
         padding: 10px 0;
         /* background-color: aliceblue; */
+        padding: 10px;
     }
     
     .pic3 img {
@@ -155,7 +160,7 @@
     }
     
     .pic3>.box {
-        width: 100%;
+        width: 96%;
         height: 40px;
         background-color: #ffffffb9;
         position: absolute;
@@ -200,7 +205,7 @@
     }
     
     .insta h1 {
-        font-size: 25px;
+        font-size: 24px;
         font-family: 'KOTRA_BOLD-Bold';
         text-align: center;
         padding: 60px 0px;
@@ -452,9 +457,9 @@
         width: 100%;
         height: 250px;
         text-align: left;
-        padding: 35px 10px;
+        padding: 35px 15px;
         font-family: 'SUITE-Regular';
-        font-size: 15px;
+        font-size: 13px;
         /* background: pink; */
     }
     
@@ -462,7 +467,7 @@
     
     #more {
         width: 100%;
-        height: 700px;
+        height: 770px;
         /* position: sticky; */
         top: 0;
         padding: 0 30px 50px 30px;
@@ -486,7 +491,7 @@
     }
     
     .art {
-        width: 50%;
+        width: 40%;
     }
     
     .art img {
